@@ -1,13 +1,25 @@
-import React from "react";
-import Main from "./pages/index";
-import { Switch, Route } from "react-router-dom";
+import React, { Component } from "react";
+import StartPage from "./pages/index";
+import MoviePage from "./pages/Movie";
+import {
+	BrowserRouter as Router,
+	Switch,
+	Route,
+	Link,
+	Redirect,
+} from "react-router-dom";
 
-function App() {
-	return (
-		<Switch>
-			<Route path="/" component={Main} />
-		</Switch>
-	);
+class App extends Component {
+	render() {
+		return (
+			<Router>
+				<Switch>
+					<Route exact path="/netflixclone" component={StartPage} />
+					<Route exact path="/movie" component={MoviePage} />
+				</Switch>
+			</Router>
+		);
+	}
 }
 
 export default App;

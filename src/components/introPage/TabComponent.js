@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 // import 'react-tabs/style/react-tabs.css';
 import TabDoor from "./tab_nav/TabDoor";
-import "../css/TabsNav.css";
+import "../../css/TabsNav.css";
 class TabComponent extends Component {
 	state = {};
 	render() {

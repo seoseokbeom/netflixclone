@@ -2,7 +2,7 @@
 :root {
 	--main-red-hover: #e50914;
 	--main-red: rgba(211, 9, 19);
-	--main-dark: rgba(20, 20, 20);
+	--main-dark: rgb(43, 40, 40);
 	--main-deep-dark: rgba(0, 0, 0);
 	--main-grey: rgba(153, 153, 153);
 }
@@ -14,8 +14,9 @@
 body {
 	font-family: "Helvetica";
 	-webkit-font-smoothing: antialiased;
-	background: var(--main-dark);
+	/* background: var(--main-dark); */
 	color: #fff;
+	overflow-x: hidden;
 }
 
 a {

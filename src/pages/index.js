@@ -1,8 +1,9 @@
 import React, { Component } from "react";
-import Header from "../components/Header";
-import TabComponent from "../components/TabComponent";
+import Header from "../components/introPage/Header";
+// import { BrowserRouter } from "react-router-dom";
+import TabComponent from "../components/introPage/TabComponent";
 
-class Main extends Component {
+class StartPage extends Component {
 	// state = {  }
 	render() {
 		return (
@@ -14,4 +15,4 @@ class Main extends Component {
 	}
 }
 
-export default Main;
+export default StartPage;

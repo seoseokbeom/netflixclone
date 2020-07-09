@@ -1,8 +1,16 @@
 import React, { Component } from "react";
-import logo from "../svg/logo.svg";
-import { NavLink } from "react-router-dom";
+import logo from "../../svg/logo.svg";
+// import {  } from "react-router-dom";
 import styled from "styled-components";
-import "../css/App.css";
+import "../../css/App.css";
+import MoviePage from "../../pages/Movie";
+import {
+	BrowserRouter as Router,
+	Switch,
+	Route,
+	Link,
+	NavLink,
+} from "react-router-dom";
 
 class Header extends Component {
 	state = {};
@@ -11,9 +19,18 @@ class Header extends Component {
 			<HeaderComponent className="header-container">
 				<div className="header-top">
 					<Logo src={logo} />
-					<NavLink className="signIn-btn" to="/">
-						Sign Inc
-					</NavLink>
+					{/* <NavLink className="signIn-btn" to="/movie">
+						Sign In
+					</NavLink> */}
+					<Link className="signIn-btn" to="/movie">
+						Sign In
+					</Link>
+					{/* <button
+						className="signIn-btn"
+						onclick="window.location.href='../moviePage/Movie'"
+					>
+						Sign In
+					</button> */}
 				</div>
 				{/* Header Content */}
 				<StoryCard>
@@ -25,9 +42,11 @@ class Header extends Component {
 					<EmailForm>
 						<EmailLockUp>
 							<SimpleForm>
-								<EmailInput defaultValue="Email address" type="text" />
+								<EmailInput placeholder="Email address" type="text" />
 							</SimpleForm>
-							<Button>TRY 30 DAYS FREE</Button>
+							<Link to="/movie">
+								<Button>TRY 30 DAYS FREE</Button>
+							</Link>
 							<p>Email is required.</p>
 						</EmailLockUp>
 						<h3>
@@ -45,6 +64,13 @@ class Header extends Component {
 export default Header;
 
 const EmailLockUp = styled.div`
+	p {
+		text-align: left;
+		margin: 0;
+		padding: 10px;
+		font-size: 15px;
+		color: #ffa00a;
+	}
 	/* text-align: left;
 	margin: 0; */
 `;
@@ -58,6 +84,7 @@ const EmailInput = styled.input`
 */
 	/* display: flex; */
 	color: #8c8c8c;
+	border-radius: 4px;
 	font-size: 16px;
 	margin: 0;
 	float: left;
@@ -72,6 +99,7 @@ const EmailInput = styled.input`
 
 const Button = styled.button`
 	/* float: left; */
+	border-radius: 2px;
 	align-items: center;
 	justify-content: center;
 	padding: 0 1em;
@@ -100,6 +128,9 @@ const StoryCard = styled.div`
 const HeroCard = styled.div`
 	max-width: 640px;
 	margin: 0 auto;
+	h2 {
+		font-weight: 80;
+	}
 `;
 
 const Logo = styled.img`
@@ -167,4 +198,8 @@ const SubTitle = styled.h2`
 	/* text-transform: uppercase; */
 `;
 
-const EmailForm = styled.ul``;
+const EmailForm = styled.ul`
+	h3 {
+		font-weight: 50;
+	}
+`;
