@@ -14,9 +14,14 @@
 body {
 	font-family: "Helvetica";
 	-webkit-font-smoothing: antialiased;
-	/* background: var(--main-dark); */
+	background: var(--main-dark);
 	color: #fff;
 	overflow-x: hidden;
+	margin: 0;
+}
+
+li {
+	text-decoration: none;
 }
 
 a {

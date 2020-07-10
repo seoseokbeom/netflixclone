@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 // import Header from "../components/moviePage/Header";
 import Navbar from "../components/moviePage/Navbar";
+import TitleMovie from "../components/moviePage/TitleMovie";
+import { Global, css } from "@emotion/core";
 
 class MoviePage extends Component {
 	state = {};
@@ -8,10 +10,66 @@ class MoviePage extends Component {
 		return (
 			<div>
 				{/* <Header /> */}
+				<Global styles={GlobalCSS} />
 				<Navbar />
+				<TitleMovie />
 			</div>
 		);
 	}
 }
+
+const GlobalCSS = css`
+	* {
+		box-sizing: border-box;
+		font-family: "Roboto", sans-serif;
+	}
+	html,
+	body,
+	.app {
+		margin: 0;
+		min-height: 100%;
+		width: 100%;
+	}
+	body {
+		background: #151515;
+	}
+	a {
+		text-decoration: none;
+		color: white;
+	}
+	p {
+		font-size: 20px;
+	}
+	ul {
+		margin: 0;
+		list-style: none;
+		padding: 0;
+	}
+	button {
+		background-color: #d0d0d0;
+		border: 0;
+		/* border: 1px solid white; */
+		/* padding: 0.75em 2.3em; */
+		/* border-radius: 0.15rem; */
+		padding-left: calc(3.6rem / 2);
+		padding-right: calc(3.6rem / 2);
+		padding-top: 0.6rem;
+		padding-bottom: 0.6rem;
+		/* padding: 0.6rem; */
+		border-radius: 0.25vw;
+		box-shadow: none;
+		font-size: 1.1vw;
+		color: black;
+		margin-right: 15px;
+		cursor: pointer;
+		font-weight: 600;
+		letter-spacing: 0.4px;
+	}
+	.Icon {
+		font-size: 18.5px;
+		cursor: pointer;
+		color: white;
+	}
+`;
 
 export default MoviePage;
