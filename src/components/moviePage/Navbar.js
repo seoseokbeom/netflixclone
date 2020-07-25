@@ -7,6 +7,14 @@ import { AiOutlineGift } from "react-icons/ai";
 import { BsFillBellFill } from "react-icons/bs";
 import { GoTriangleDown } from "react-icons/go";
 import Character from "../../images/playMovie/netflixCharacter.png";
+import MoviePage from "../../pages/Movie";
+import {
+	BrowserRouter as Router,
+	Switch,
+	Route,
+	Link,
+	NavLink,
+} from "react-router-dom";
 const leftLinks = ["Home", "TV Shows", "Movies", "Latest", "My List"];
 
 /**
@@ -48,41 +56,44 @@ const Navbar = () => {
 			{/* <FaSearch /> */}
 			<ul>
 				<li>
-					<a href="/">
+					<Link to="/movie">
 						<img height="75" src={netflixLogo} />
-					</a>
+					</Link>
+					{/* <a href="/">
+						<img height="75" src={netflixLogo} />
+					</a> */}
 				</li>
 
 				{leftLinks.map((link) => (
 					<li key={link}>
-						<a href="/">{link}</a>
+						<Link to="/movie">{link}</Link>
 					</li>
 				))}
 			</ul>
 
 			<ul className="right">
 				<li>
-					<a href="/">
+					<Link to="/movie">
 						{/* <i className="fa fa-search" aria-hidden="true"></i> */}
 
 						<FaSearch size={20} />
-					</a>
+					</Link>
 				</li>
 				<li>
-					<a href="/">
+					<Link to="/movie">
 						<AiOutlineGift size={28} />
-					</a>
+					</Link>
 				</li>
 				<li>
-					<a href="/">
+					<Link to="/movie">
 						<BsFillBellFill size={24} />
-					</a>
+					</Link>
 				</li>
 				<li style={{ verticalAlign: "baseline" }}>
-					<a href="/">
+					<Link to="/movie">
 						<img src={Character} alt="Character" style={{ maxWidth: 30 }} />
 						<GoTriangleDown height="30" className="svg" size={14} />
-					</a>
+					</Link>
 				</li>
 				{/* BsFillBellFill   */}
 			</ul>

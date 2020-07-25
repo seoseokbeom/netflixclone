@@ -7,9 +7,8 @@ import wallpaper from "../../images/playMovie/wallpaper.jpg";
 import ItsOk from "../../images/playMovie/its_ok_to_not_be_ok.jpg";
 // import logo from "../img/logo.png";
 import logo from "../../images/playMovie/itsOkLogo.png";
-import sliders1 from "../../images/playMovie/sliders1.png";
 import { BsExclamationCircle } from "react-icons/bs";
-
+import ContentRow from "./ContentRow";
 /**
  * @function TitleMovie
  */
@@ -32,26 +31,36 @@ const TitleMovie = ({ children }) => (
 				More Info
 			</button>
 			{/* C:\Users\kakun\Desktop\github\netflixclone\netflix\src\images\playMovie\sliders1.png */}
-			<img className="sliders1" src={sliders1} alt="sliders1" />
+			{/* <img className="sliders1" src={sliders1} alt="sliders1" /> */}
 			{/* <Button icon="play">Play</Button>
 			<Button icon="info-circle">More Info</Button> */}
 		</div>
-
 		{children}
 	</div>
 );
 
 const TitleMovieCSS = css`
   position: relative;
+  z-index:-999;  
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0.3), transparent),
 		url('${ItsOk}');
+    min-height:100%;
+    min-width: 100%;
+    background-position: center center;
+    background-size: cover;
+    ${"" /* background-size: contain; */}
+    height: auto;
+    top: 0;
+    left: 0;
   /* background-image:  url('${ItsOk}'); */
   /* background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0.52), rgba(117, 19, 93, 0.73)), url('images/background.jpg'); */
   /* background-image: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(255,255,255,1) 100% ) url('${ItsOk}'); */
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 100%;
-  height: 98vh;
+  ${"" /* background-repeat: no-repeat center fixed;   */}
+  ${"" /* object-fit: contain;
+  width: 100%; */}
+  ${"" /* background-size: 100%; */}
+  ${"" /* background-size: cover; */}
+  ${"" /* height: 103vh; */}
   top: 0;
 
  
@@ -88,6 +97,7 @@ const TitleMovieCSS = css`
     
     padding-top: 200px;
     padding-left: 60px;
+    padding-bottom:300px;
     /* max-width: 500px; */
     color: white;
     padding-left: 60px;
@@ -117,8 +127,8 @@ const TitleMovieCSS = css`
   }
 
   .ContentRow {
-    position: absolute;
-    bottom: 20px;
+    ${"" /* position: absolute; */}
+    ${"" /* bottom: 20px; */}
   }
 `;
 export default TitleMovie;

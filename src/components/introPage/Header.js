@@ -93,7 +93,8 @@ const EmailInput = styled.input`
 	width: 60%;
 	background: #fff;
 	max-width: 450px;
-	height: 60px;
+	height: 62px;
+	margin-top: -2px;
 	min-height: 60px;
 `;
 

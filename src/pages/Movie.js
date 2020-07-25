@@ -3,8 +3,10 @@ import React, { Component } from "react";
 import Navbar from "../components/moviePage/Navbar";
 import TitleMovie from "../components/moviePage/TitleMovie";
 import { Global, css } from "@emotion/core";
-import Row from '../components/moviePage/Row'
-import requests from '../components/moviePage/requests'
+import Row from "../components/moviePage/Row";
+import requests from "../components/moviePage/requests";
+import Footer from "../components/moviePage/Footer";
+import ContentRow from "../components/moviePage/ContentRow";
 
 class MoviePage extends Component {
 	state = {};
@@ -15,15 +17,20 @@ class MoviePage extends Component {
 				<Global styles={GlobalCSS} />
 				<Navbar />
 				<TitleMovie />
-				<Row title="NETFLIX ORIGINAL" fetchUrl={requests.fetchNetflixOriginals} isLargeRow />
+				<ContentRow />
+				<Row
+					title="NETFLIX ORIGINAL"
+					fetchUrl={requests.fetchNetflixOriginals}
+					isLargeRow
+				/>
 				<Row title="Trending Now" fetchUrl={requests.fetchTrending} />
 				<Row title="Top Rated" fetchUrl={requests.fetchTopRated} />
 				<Row title="Action Movies" fetchUrl={requests.fetchActionMovies} />
 				<Row title="Comedy Movies" fetchUrl={requests.fetchComedyMovies} />
 				<Row title="Horror Movies" fetchUrl={requests.fetchHorrorMovies} />
 				<Row title="Romance Movies" fetchUrl={requests.fetchRomanceMovies} />
-				<Row title="Documentaries" fetchUrl={requests.fetchDocumnetaries} />
-
+				{/* <Row title="Documentaries" fetchUrl={requests.fetchDocumnetaries} /> */}
+				<Footer />
 			</div>
 		);
 	}
