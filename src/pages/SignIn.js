@@ -21,7 +21,24 @@ class Header extends Component {
 					<Logo src={logo} />
 				</div>
 				<LoginBody>
-					<LoginContent></LoginContent>
+					<LoginContent className="hybrid-login-form-main">
+						<h1>Sign In</h1>
+						<div className="login-form">
+							<div className="login-id">
+								<div className="box">
+									<label>
+										<input type="text" />
+										<label className="placeLabel">Email or phone number</label>
+									</label>
+								</div>
+
+							</div>
+							<div className="login-passwd">
+								<div className="box"></div>
+							</div>
+
+						</div>
+					</LoginContent>
 				</LoginBody>
 			</HeaderComponent>
 		);
@@ -31,43 +48,72 @@ class Header extends Component {
 export default Header;
 
 const LoginContent = styled.div`
+	min-height: 660px;	
 	@media only screen and (min-width: 740px) {
 		min-height: 625px;
 		padding: 60px 68px 40px;
 		margin-bottom: 90px;
 		background-color: rgba(0, 0, 0, 0.75);
-		/* -webkit-border-radius: 4px;
-		-moz-border-radius: 4px;
-		border-radius: 4px;
-		-webkit-box-sizing: border-box;
-		-moz-box-sizing: border-box;
-		box-sizing: border-box;
-		display: -webkit-box;
-		display: -webkit-flex;
-		display: -moz-box;
-		display: -ms-flexbox;
-		display: flex;
-		-webkit-box-orient: vertical;
-		-webkit-box-direction: normal;
-		-webkit-flex-direction: column;
-		-moz-box-orient: vertical;
-		-moz-box-direction: normal;
-		-ms-flex-direction: column;
-		flex-direction: column; */
 		margin: 0;
-		min-height: 515px;
-		padding: 20px 0 30px;
 		width: 100%;
+	}
+
+	color: #333;
+	margin: 0 auto;
+	padding: 0 5%;
+	.hybrid-login-form-main {
+
+	}
+
+	h1 {
+		color: #fff;
+		<z-index:2></z-index:2>;
+	}
+	
+	.login-id {
+		padding-bottom: 16px;
+		max-width: 100%;
+		font-size: 16px;
+		display: block;
+
+
+	}
+	.login-passwd {
+    padding-bottom: 16px;
+
+	}
+
+	.box {
+		width:100%;
+    color: #fff;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 4px;
+    padding: 16px 20px 0;
+		background: #333;
+	}
+
+	.text {
+    padding: 16px 20px 0;
+
+	}
+
+	.placeLabel {
+		left: 20px;
+		font-size: 16px;
+    // position: absolute;
+    // top: 50%;
+    color: #8c8c8c;
 	}
 `;
 
 const LoginBody = styled.div`
-	@media only screen and (min-width: 740px) {
-		margin: 0 auto -236px;
-		min-height: 100vh;
-		background-color: transparent;
-		max-width: 450px;
-	}
+@media only screen and (min-width: 740px) {
+	margin: 0 auto -236px;
+	min-height: 100vh;
+	background-color: transparent;
+	max-width: 450px;
+}
 `;
 
 const EmailLockUp = styled.div`
@@ -138,10 +184,10 @@ const HeroCard = styled.div`
 `;
 
 const Logo = styled.img`
-	width: 134px;
-	height: 44px;
+height: 45px;
+    width: 167px;
 	position: absolute;
-	top: 25%;
+	top: 50%;
 	left: 10%;
 	transform: translate(-50%, -50%);
 `;
@@ -167,8 +213,8 @@ const HeaderComponent = styled.div`
 	}
 
 	.header-top {
-		position: relative;
-		height: 10rem;
+		position: relative;    
+		height: 90px;
 		z-index: 1;
 	}
 
