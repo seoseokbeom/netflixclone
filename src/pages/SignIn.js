@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import logo from "../../svg/logo.svg";
+import logo from "../svg/logo.svg";
 // import {  } from "react-router-dom";
 import styled from "styled-components";
-import "../../css/App.css";
-import MoviePage from "../../pages/Movie";
+import "../css/App.css";
+import MoviePage from "../pages/Movie";
 import {
 	BrowserRouter as Router,
 	Switch,
@@ -19,40 +19,56 @@ class Header extends Component {
 			<HeaderComponent className="header-container">
 				<div className="header-top">
 					<Logo src={logo} />
-					<Link className="signIn-btn" to="/signin">
-						Sign In
-					</Link>
 				</div>
-				{/* Header Content */}
-				<StoryCard>
-					{/* <div className="header-content"> */}
-					<HeroCard>
-						<Title>Unlimited films, TV programmes and more.</Title>
-						<h2>Watch anywhere. Cancel at any time.</h2>
-					</HeroCard>
-					<EmailForm>
-						<EmailLockUp>
-							<SimpleForm>
-								<EmailInput placeholder="Email address" type="text" />
-							</SimpleForm>
-							<Link to="/signin">
-								<Button>TRY 30 DAYS FREE</Button>
-							</Link>
-							<p>Email is required.</p>
-						</EmailLockUp>
-						<h3>
-							Ready to watch? Enter your email to create or restart your
-							membership.
-						</h3>
-					</EmailForm>
-					{/* </div> */}
-				</StoryCard>
+				<LoginBody>
+					<LoginContent></LoginContent>
+				</LoginBody>
 			</HeaderComponent>
 		);
 	}
 }
 
 export default Header;
+
+const LoginContent = styled.div`
+	@media only screen and (min-width: 740px) {
+		min-height: 625px;
+		padding: 60px 68px 40px;
+		margin-bottom: 90px;
+		background-color: rgba(0, 0, 0, 0.75);
+		/* -webkit-border-radius: 4px;
+		-moz-border-radius: 4px;
+		border-radius: 4px;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+		display: -webkit-box;
+		display: -webkit-flex;
+		display: -moz-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		-webkit-flex-direction: column;
+		-moz-box-orient: vertical;
+		-moz-box-direction: normal;
+		-ms-flex-direction: column;
+		flex-direction: column; */
+		margin: 0;
+		min-height: 515px;
+		padding: 20px 0 30px;
+		width: 100%;
+	}
+`;
+
+const LoginBody = styled.div`
+	@media only screen and (min-width: 740px) {
+		margin: 0 auto -236px;
+		min-height: 100vh;
+		background-color: transparent;
+		max-width: 450px;
+	}
+`;
 
 const EmailLockUp = styled.div`
 	p {
@@ -69,11 +85,6 @@ const EmailLockUp = styled.div`
 const SimpleForm = styled.div``;
 
 const EmailInput = styled.input`
-	/* margin-bottom: 10px; */
-	/* display: inline-flex; */
-	/* padding: 0;
-*/
-	/* display: flex; */
 	color: #8c8c8c;
 	border-radius: 4px;
 	font-size: 16px;

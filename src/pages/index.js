@@ -9,7 +9,6 @@ class StartPage extends Component {
 		return (
 			<div>
 				<Header />
-				<TabComponent />
 			</div>
 		);
 	}
