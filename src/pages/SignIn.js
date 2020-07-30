@@ -21,7 +21,19 @@ class Header extends Component {
 					<Logo src={logo} />
 				</div>
 				<LoginBody>
-					<LoginContent></LoginContent>
+					<LoginContent>
+						<h1>Sign In</h1>
+						<div className="textb">
+							<input type="text" required />
+							<div className="placeholder">Username</div>
+						</div>
+
+						<div className="textb">
+							<input type="text" required />
+							<div className="placeholder">Password</div>
+							<div className="show-password fas fa-eye-slash"></div>
+						</div>
+					</LoginContent>
 				</LoginBody>
 			</HeaderComponent>
 		);
