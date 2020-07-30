@@ -3,6 +3,8 @@ import logo from "../svg/logo.svg";
 // import {  } from "react-router-dom";
 import styled from "styled-components";
 import "../css/App.css";
+import Icon from "../components/moviePage/Icon";
+
 import MoviePage from "../pages/Movie";
 import {
 	BrowserRouter as Router,
@@ -21,8 +23,40 @@ class Header extends Component {
 					<Logo src={logo} />
 				</div>
 				<LoginBody>
-					<LoginContent className="hybrid-login-form-main">
+					<LoginContent>
 						<h1>Sign In</h1>
+						<div className="textb">
+							<input type="text" required />
+							<div className="placeholder">Username</div>
+						</div>
+
+						<div className="textb">
+							<input type="text" required />
+							<div className="placeholder">Password</div>
+							<Icon type="eye-slash" />
+							{/* <div className="show-password fas fa-eye-slash"></div> */}
+						</div>
+
+						<div className="checkbox">
+							<input type="checkbox" />
+							<Icon type="check" />
+							Remember me
+							{/* <div className="fas fa-check"></div> */}
+						</div>
+
+						<a href="#">Need help?</a>
+						<div>
+							<h2>New to Netflix?</h2>
+							<a href="#">Sign up now</a>
+							<p>
+								This page is protected by Google reCAPTCHA to ensure you're not
+								a bot.
+							</p>
+						</div>
+					</LoginContent>
+					{/* <LoginContent>
+						<h1>Sign In</h1>
+
 						<div className="login-form">
 							<div className="login-id">
 								<div className="box">
@@ -36,7 +70,7 @@ class Header extends Component {
 								<div className="box"></div>
 							</div>
 						</div>
-					</LoginContent>
+					</LoginContent> */}
 				</LoginBody>
 			</HeaderComponent>
 		);
@@ -46,7 +80,7 @@ class Header extends Component {
 export default Header;
 
 const LoginContent = styled.div`
-	min-height: 660px;	
+	min-height: 660px;
 	@media only screen and (min-width: 740px) {
 		min-height: 625px;
 		padding: 60px 68px 40px;
@@ -56,52 +90,60 @@ const LoginContent = styled.div`
 		width: 100%;
 	}
 
-	color: #333;
+	color: #8c8c8c;
 	margin: 0 auto;
 	padding: 0 5%;
-	.hybrid-login-form-main {
-
-	}
 
 	h1 {
 		color: #fff;
-		<z-index:2></z-index:2>;
+		padding-bottom: 30px;
+		/* <z-index:2></z-index:2>; */
 	}
-	
+
+	.textb {
+		margin-bottom: 12px;
+		position: relative;
+	}
+
+	.textb input {
+		width: 100%;
+		height: 45px;
+		border: none;
+		border-radius: 6px;
+		background-color: #333;
+		font-size: 16px;
+	}
+
 	.login-id {
 		padding-bottom: 16px;
 		max-width: 100%;
 		font-size: 16px;
 		display: block;
-
-
 	}
 	.login-passwd {
-    padding-bottom: 16px;
-
+		padding-bottom: 16px;
 	}
 
 	.box {
-		width:100%;
-    color: #fff;
-    height: 50px;
-    line-height: 50px;
-    border-radius: 4px;
-    padding: 16px 20px 0;
+		width: 100%;
+		color: #fff;
+		height: 50px;
+		line-height: 50px;
+		border-radius: 4px;
+		padding: 16px 20px 0;
 		background: #333;
 	}
 
 	.text {
-    padding: 16px 20px 0;
-
+		padding: 16px 20px 0;
 	}
 
 	.placeLabel {
 		left: 20px;
 		font-size: 16px;
-    // position: absolute;
-    // top: 50%;
-    color: #8c8c8c;
+		// position: absolute;
+		// top: 50%;
+		color: #8c8c8c;
 	}
 `;
 
