@@ -4,6 +4,11 @@ import logo from "../svg/logo.svg";
 import styled from "styled-components";
 import "../css/App.css";
 import Icon from "../components/moviePage/Icon";
+// import { material, octicons } from "styled-icons";
+// @styled-icons/remix-fill/FacebookBox
+// import { FacebookBox } from "@styled-icons/remix-fill";
+
+// import { A } from "@styled-icons/fa-brands/FacebookSquare";
 
 import MoviePage from "../pages/Movie";
 import {
@@ -13,6 +18,10 @@ import {
 	Link,
 	NavLink,
 } from "react-router-dom";
+
+// const FacebookLogo = styled(A)`
+// 	color: blue;
+// `;
 
 class Header extends Component {
 	state = {};
@@ -25,6 +34,7 @@ class Header extends Component {
 				<LoginBody>
 					<LoginContent>
 						<h1>Sign In</h1>
+						{/* <FacebookBox /> */}
 						<div className="textb">
 							<input type="text" required />
 							<div className="placeholder">Username</div>
@@ -37,15 +47,25 @@ class Header extends Component {
 							{/* <div className="show-password fas fa-eye-slash"></div> */}
 						</div>
 
-						<div className="checkbox">
+						<div className="signin-btn">Sign In</div>
+
+						<div className="remember">
 							<input type="checkbox" />
 							<Icon type="check" />
-							Remember me
+							<div className="remember2"> Remember me</div>
+							<a className="help" href="#">
+								Need help?
+							</a>
 							{/* <div className="fas fa-check"></div> */}
 						</div>
 
-						<a href="#">Need help?</a>
 						<div>
+							<div className="facebook-login">
+								<a href="#">
+									<Icon type="facebook-square" />
+								</a>
+								<div className="facebook-login2">Log with Facebook</div>
+							</div>
 							<h2>New to Netflix?</h2>
 							<a href="#">Sign up now</a>
 							<p>
@@ -80,6 +100,12 @@ class Header extends Component {
 export default Header;
 
 const LoginContent = styled.div`
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+
 	min-height: 660px;
 	@media only screen and (min-width: 740px) {
 		min-height: 625px;
@@ -112,6 +138,44 @@ const LoginContent = styled.div`
 		border-radius: 6px;
 		background-color: #333;
 		font-size: 16px;
+		font-weight: 500;
+		padding: 14px 60px 0 10px;
+	}
+
+	.signin-btn {
+		width: 100%;
+		height: 45px;
+		border-radius: 6px;
+		background-color: #e50914;
+		font-size: 16px;
+		margin: 24px 0 12px;
+		padding: 16px;
+		text-align: center;
+		color: white;
+		font-weight: 700;
+	}
+
+	.remember {
+		position: relative;
+		display: flex;
+		margin-bottom: 30px;
+		font-weight: 100;
+		font-size: 13px;
+	}
+
+	.help {
+		position: absolute;
+		right: 0;
+	}
+
+	.facebook-login {
+		position: relative;
+		display: flex;
+	}
+
+	.facebook-login2 {
+		margin-left: 4px;
+		font-size: 13px;
 	}
 
 	.login-id {

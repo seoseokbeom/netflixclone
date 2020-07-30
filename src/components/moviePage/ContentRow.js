@@ -19,11 +19,13 @@ const ContentRow = () => {
 				/* position: absolute; */
 				/* position: relative; */
 				position: relative;
-				/* width: 100%; */
+				/* width: 100%;
+				 */
 				/* height: 400px; */
 				overflow-x: scroll;
 				::-webkit-scrollbar {
 					display: none;
+					
 				}
 				z-index: 2;
 				padding: 30px;
