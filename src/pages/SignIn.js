@@ -4,12 +4,8 @@ import logo from "../svg/logo.svg";
 import styled from "styled-components";
 import "../css/App.css";
 import Icon from "../components/moviePage/Icon";
-// import { material, octicons } from "styled-icons";
-// @styled-icons/remix-fill/FacebookBox
-// import { FacebookBox } from "@styled-icons/remix-fill";
-
-// import { A } from "@styled-icons/fa-brands/FacebookSquare";
-
+import { FaEyeSlash } from "react-icons/fa";
+import { GrFacebook } from "react-icons/gr";
 import MoviePage from "../pages/Movie";
 import {
 	BrowserRouter as Router,
@@ -43,7 +39,10 @@ class Header extends Component {
 						<div className="textb">
 							<input type="text" required />
 							<div className="placeholder">Password</div>
-							<Icon type="eye-slash" />
+							<div className="FaEyeSlash">
+								<FaEyeSlash size="18px" />
+							</div>
+							{/* <Icon type="eye-slash" /> */}
 							{/* <div className="show-password fas fa-eye-slash"></div> */}
 						</div>
 
@@ -62,13 +61,20 @@ class Header extends Component {
 						<div>
 							<div className="facebook-login">
 								<a href="#">
-									<Icon type="facebook-square" />
+									<div className="icon-color">
+										{/* <Icon color="#3b5998" type="facebook-square" /> */}
+										<GrFacebook color="#3b5998" size="20px" />
+									</div>
 								</a>
 								<div className="facebook-login2">Log with Facebook</div>
 							</div>
-							<h2>New to Netflix?</h2>
-							<a href="#">Sign up now</a>
-							<p>
+							<div className="newtonetflix">
+								<h2>New to Netflix?</h2>
+								<a className="signupnow" href="#">
+									Sign up now
+								</a>
+							</div>
+							<p className="description">
 								This page is protected by Google reCAPTCHA to ensure you're not
 								a bot.
 							</p>
@@ -139,7 +145,8 @@ const LoginContent = styled.div`
 		background-color: #333;
 		font-size: 16px;
 		font-weight: 500;
-		padding: 14px 60px 0 10px;
+		color: white;
+		padding: 14px 60px 0 20px;
 	}
 
 	.signin-btn {
@@ -155,10 +162,41 @@ const LoginContent = styled.div`
 		font-weight: 700;
 	}
 
+	.textb input:focus ~ .placeholder,
+	.textb input:valid ~ .placeholder {
+		/* left: 10px; */
+		top: -9px;
+		font-size: 10px;
+		transition-duration: 0.2s;
+	}
+
+	.placeholder {
+		text-transform: uppercase;
+		font-size: 14px;
+		font-weight: 500;
+		position: absolute;
+		line-height: 45px;
+		top: 0;
+		left: 20px;
+		color: #9d9d9d;
+		user-select: none;
+		pointer-events: none;
+		/* position: relative; */
+	}
+	.FaEyeSlash {
+		position: absolute;
+		line-height: 45px;
+		top: 6px;
+		right: 20px;
+		pointer-events: fill;
+
+		/* right: 0; */
+	}
+
 	.remember {
 		position: relative;
 		display: flex;
-		margin-bottom: 30px;
+		margin-bottom: 50px;
 		font-weight: 100;
 		font-size: 13px;
 	}
@@ -172,9 +210,39 @@ const LoginContent = styled.div`
 		position: relative;
 		display: flex;
 	}
+	.icon-color {
+		/* color: #3b5998; */
+		size: 20px;
+	}
 
 	.facebook-login2 {
+		font-size: 13px;
 		margin-left: 4px;
+		line-height: 23px;
+		margin-bottom: 20px;
+	}
+
+	.newtonetflix {
+		position: relative;
+		display: flex;
+		/* justify-content: space-between; */
+		margin-bottom: 20px;
+	}
+	h2 {
+		position: relative;
+		font-size: 16px;
+		font-weight: 100;
+		margin-right: 10px;
+	}
+	.signupnow {
+		position: relative;
+		line-height: 16px;
+		/* top: 6px; */
+		right: 0;
+		font-size: 16px;
+	}
+
+	.description {
 		font-size: 13px;
 	}
 
