@@ -20,7 +20,18 @@ import {
 // `;
 
 class Header extends Component {
-	state = {};
+	constructor(props) {
+		super(props);
+
+		this.state = {
+			hidden: true,
+		};
+		this.toggleShow = this.toggleShow.bind(this);
+	}
+
+	toggleShow() {
+		this.setState({ hidden: !this.state.hidden });
+	}
 	render() {
 		return (
 			<HeaderComponent className="header-container">
@@ -33,28 +44,33 @@ class Header extends Component {
 						{/* <FacebookBox /> */}
 						<div className="textb">
 							<input type="text" required />
-							<div className="placeholder">Username</div>
+							<div className="placeholder">Email or phone number</div>
 						</div>
 
 						<div className="textb">
-							<input type="text" required />
+							<input type={this.state.hidden ? "password" : "text"} required />
 							<div className="placeholder">Password</div>
-							<div className="FaEyeSlash">
-								<FaEyeSlash size="18px" />
-							</div>
+							<button onClick={this.toggleShow} className="FaEyeSlash">
+								<FaEyeSlash color="white" size="18px" />
+							</button>
+							{/* <div >
+							</div> */}
 							{/* <Icon type="eye-slash" /> */}
 							{/* <div className="show-password fas fa-eye-slash"></div> */}
 						</div>
 
-						<div className="signin-btn">Sign In</div>
+						<button className="signin-btn">Sign In</button>
 
 						<div className="remember">
-							<input type="checkbox" />
-							<Icon type="check" />
+							<input className="checkbox1" type="checkbox" />
+							{/* <Icon type="check" /> */}
 							<div className="remember2"> Remember me</div>
-							<a className="help" href="#">
-								Need help?
-							</a>
+
+							<Link to="/signin1">
+								<a className="help" href="#">
+									Need help?
+								</a>
+							</Link>
 							{/* <div className="fas fa-check"></div> */}
 						</div>
 
@@ -70,9 +86,12 @@ class Header extends Component {
 							</div>
 							<div className="newtonetflix">
 								<h2>New to Netflix?</h2>
-								<a className="signupnow" href="#">
-									Sign up now
-								</a>
+
+								<Link to="/netflixclone">
+									<a className="signupnow" href="#">
+										Sign up now
+									</a>
+								</Link>
 							</div>
 							<p className="description">
 								This page is protected by Google reCAPTCHA to ensure you're not
@@ -80,23 +99,6 @@ class Header extends Component {
 							</p>
 						</div>
 					</LoginContent>
-					{/* <LoginContent>
-						<h1>Sign In</h1>
-
-						<div className="login-form">
-							<div className="login-id">
-								<div className="box">
-									<label>
-										<input type="text" />
-										<label className="placeLabel">Email or phone number</label>
-									</label>
-								</div>
-							</div>
-							<div className="login-passwd">
-								<div className="box"></div>
-							</div>
-						</div>
-					</LoginContent> */}
 				</LoginBody>
 			</HeaderComponent>
 		);
@@ -111,6 +113,8 @@ const LoginContent = styled.div`
 		padding: 0;
 		box-sizing: border-box;
 	}
+	position: relative;
+	z-index: 1000;
 
 	min-height: 660px;
 	@media only screen and (min-width: 740px) {
@@ -122,14 +126,13 @@ const LoginContent = styled.div`
 		width: 100%;
 	}
 
-	color: #8c8c8c;
+	/* color: #8c8c8c; */
 	margin: 0 auto;
 	padding: 0 5%;
 
 	h1 {
-		color: #fff;
+		color: white;
 		padding-bottom: 30px;
-		/* <z-index:2></z-index:2>; */
 	}
 
 	.textb {
@@ -160,6 +163,7 @@ const LoginContent = styled.div`
 		text-align: center;
 		color: white;
 		font-weight: 700;
+		opacity: 1;
 	}
 
 	.textb input:focus ~ .placeholder,
@@ -171,7 +175,7 @@ const LoginContent = styled.div`
 	}
 
 	.placeholder {
-		text-transform: uppercase;
+		/* text-transform: uppercase; */
 		font-size: 14px;
 		font-weight: 500;
 		position: absolute;
@@ -181,12 +185,14 @@ const LoginContent = styled.div`
 		color: #9d9d9d;
 		user-select: none;
 		pointer-events: none;
-		/* position: relative; */
 	}
 	.FaEyeSlash {
 		position: absolute;
-		line-height: 45px;
-		top: 6px;
+		line-height: 20px;
+		cursor: pointer;
+		background-color: transparent;
+		border: none;
+		top: 15px;
 		right: 20px;
 		pointer-events: fill;
 
@@ -199,6 +205,14 @@ const LoginContent = styled.div`
 		margin-bottom: 50px;
 		font-weight: 100;
 		font-size: 13px;
+	}
+
+	.remember2 {
+		color: #9d9d9d;
+	}
+
+	.checkbox1 {
+		margin-right: 5px;
 	}
 
 	.help {
@@ -220,6 +234,7 @@ const LoginContent = styled.div`
 		margin-left: 4px;
 		line-height: 23px;
 		margin-bottom: 20px;
+		color: #9d9d9d;
 	}
 
 	.newtonetflix {
@@ -233,6 +248,7 @@ const LoginContent = styled.div`
 		font-size: 16px;
 		font-weight: 100;
 		margin-right: 10px;
+		color: #9d9d9d;
 	}
 	.signupnow {
 		position: relative;
@@ -244,6 +260,7 @@ const LoginContent = styled.div`
 
 	.description {
 		font-size: 13px;
+		color: #9d9d9d;
 	}
 
 	.login-id {
@@ -275,15 +292,16 @@ const LoginContent = styled.div`
 		font-size: 16px;
 		// position: absolute;
 		// top: 50%;
-		color: #8c8c8c;
+		/* color: white; */
 	}
 `;
 
 const LoginBody = styled.div`
+	z-index: 1;
 	@media only screen and (min-width: 740px) {
 		margin: 0 auto -236px;
 		min-height: 100vh;
-		background-color: transparent;
+		/* background-color: transparent; */
 		max-width: 450px;
 	}
 `;
@@ -405,11 +423,11 @@ const HeaderComponent = styled.div`
 `;
 
 // Main Title
-const Title = styled.h1`
-	max-width: 640px;
-	margin: 0 auto;
-	font-size: 3.125rem;
-`;
+// const Title = styled.h1`
+// 	max-width: 640px;
+// 	margin: 0 auto;
+// 	font-size: 3.125rem;
+// `;
 
 // Subtitle
 const SubTitle = styled.h2`

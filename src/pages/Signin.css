@@ -1,0 +1,30 @@
+/* Global Var */
+:root {
+	--main-red-hover: #e50914;
+	--main-red: rgba(211, 9, 19);
+	--main-dark: rgb(43, 40, 40);
+	--main-deep-dark: rgba(0, 0, 0);
+	--main-grey: rgba(153, 153, 153);
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-decoration: none;
+	box-sizing: border-box;
+}
+
+/* body {
+	font-family: "Helvetica";
+	-webkit-font-smoothing: antialiased;
+	background: white;
+	color: #fff;
+	overflow-x: hidden;
+	margin: 0;
+} */
+
+.entire {
+	background: white;
+}

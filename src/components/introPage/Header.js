@@ -17,6 +17,7 @@ class Header extends Component {
 	render() {
 		return (
 			<HeaderComponent className="header-container">
+				<div className="overlay"></div>
 				<div className="header-top">
 					<Logo src={logo} />
 					<Link className="signIn-btn" to="/signin">
@@ -27,10 +28,14 @@ class Header extends Component {
 				<StoryCard>
 					{/* <div className="header-content"> */}
 					<HeroCard>
-						<Title>Unlimited films, TV programmes and more.</Title>
+						<Title>Unlimited movies, TV shows, and more.</Title>
 						<h2>Watch anywhere. Cancel at any time.</h2>
 					</HeroCard>
 					<EmailForm>
+						<h3>
+							Ready to watch? Enter your email to create or restart your
+							membership.
+						</h3>
 						<EmailLockUp>
 							<SimpleForm>
 								<EmailInput placeholder="Email address" type="text" />
@@ -40,10 +45,6 @@ class Header extends Component {
 							</Link>
 							<p>Email is required.</p>
 						</EmailLockUp>
-						<h3>
-							Ready to watch? Enter your email to create or restart your
-							membership.
-						</h3>
 					</EmailForm>
 					{/* </div> */}
 				</StoryCard>
@@ -123,6 +124,7 @@ const HeroCard = styled.div`
 	margin: 0 auto;
 	h2 {
 		font-weight: 80;
+		margin: 1rem auto;
 	}
 `;
 
@@ -180,6 +182,9 @@ const Title = styled.h1`
 	max-width: 640px;
 	margin: 0 auto;
 	font-size: 3.125rem;
+	@media only screen and (max-width: 1449px) and (min-width: 950px) {
+		font-size: 3.125rem;
+	}
 `;
 
 // Subtitle
@@ -193,6 +198,13 @@ const SubTitle = styled.h2`
 
 const EmailForm = styled.ul`
 	h3 {
+		padding: 0 5%;
 		font-weight: 50;
+		@media only screen and (max-width: 1449px) and (min-width: 950px),
+			only screen and (min-width: 1450px) {
+			max-width: none;
+			padding-bottom: 20px;
+			font-size: 1.2rem;
+		}
 	}
 `;
