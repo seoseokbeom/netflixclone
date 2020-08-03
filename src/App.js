@@ -6,6 +6,7 @@ import SignIn1 from "./pages/Signin1";
 import Signin1_2 from "./pages/Signin1_2";
 import Signin1_3 from "./pages/Signin1_3";
 import ManageProfile from "./pages/ManageProfile";
+// import Auth from "../src/components/authentication/Application.jsx";
 import {
 	BrowserRouter as Router,
 	Switch,
@@ -19,6 +20,7 @@ class App extends Component {
 		return (
 			<Router>
 				<Switch>
+					{/* <Route exact path="/auth" component={Auth} /> */}
 					<Route exact path="/netflixclone" component={StartPage} />
 					<Route exact path="/movie" component={MoviePage} />
 					<Route exact path="/signin" component={SignIn} />
