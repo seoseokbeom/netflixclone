@@ -58,8 +58,9 @@ class Header extends Component {
 							{/* <Icon type="eye-slash" /> */}
 							{/* <div className="show-password fas fa-eye-slash"></div> */}
 						</div>
-
-						<button className="signin-btn">Sign In</button>
+						<Link to="/movie">
+							<button className="signin-btn">Sign In</button>
+						</Link>
 
 						<div className="remember">
 							<input className="checkbox1" type="checkbox" />
@@ -87,7 +88,7 @@ class Header extends Component {
 							<div className="newtonetflix">
 								<h2>New to Netflix?</h2>
 
-								<Link to="/netflixclone">
+								<Link to="/signin1">
 									<a className="signupnow" href="#">
 										Sign up now
 									</a>
@@ -164,6 +165,7 @@ const LoginContent = styled.div`
 		color: white;
 		font-weight: 700;
 		opacity: 1;
+		border: none;
 	}
 
 	.textb input:focus ~ .placeholder,

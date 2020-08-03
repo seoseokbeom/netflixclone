@@ -7,7 +7,7 @@ import styled from "styled-components";
 import Icon from "../components/moviePage/Icon";
 import { FaEyeSlash } from "react-icons/fa";
 import { GrFacebook } from "react-icons/gr";
-import MoviePage from "../pages/Movie";
+import MoviePage from "./Movie";
 import {
 	BrowserRouter as Router,
 	Switch,
@@ -17,7 +17,7 @@ import {
 } from "react-router-dom";
 import "./Signin.css";
 
-export class Signin1 extends Component {
+class Signin1_2 extends Component {
 	render() {
 		return (
 			// <HeaderComponent className="header-container">
@@ -36,20 +36,27 @@ export class Signin1 extends Component {
 				<Content>
 					<div className="contentContainer">
 						<div className="logoContainer">
-							<div className="imgContainer">
-								<img
-									src="https://assets.nflxext.com/ffe/siteui/acquisition/simplicity/Devices.png"
-									alt=""
-								/>
+							<p>Step 1 of 3</p>
+							<h1>Create a password to start your membership.</h1>
+							<p>
+								Just a few more steps and you're done! We hate paperwork, too.
+							</p>
+							<div className="textb">
+								<input type="text" required />
+								<div className="placeholder">Email or phone number</div>
 							</div>
 
-							<p>Step 1 of 3</p>
-							<h1>Finish setting up your account.</h1>
-							<p>
-								Netflix is personalized for you. Create a password to watch
-								Netflix on any device at any time.
-							</p>
-							<Link to="/signin1_2">
+							<div className="textb">
+								<input type="password" required />
+								<div className="placeholder">Add a password</div>
+							</div>
+							<div className="remember">
+								<input className="checkbox1" type="checkbox" />
+								<div className="remember2">
+									Yes, please email me Netflix special offers.
+								</div>
+							</div>
+							<Link to="/manage">
 								<Button>Continue</Button>
 							</Link>
 						</div>
@@ -96,7 +103,7 @@ export class Signin1 extends Component {
 	}
 }
 
-export default Signin1;
+export default Signin1_2;
 const Button = styled.button`
 	width: 100%;
 	height: 48px;
@@ -106,7 +113,7 @@ const Button = styled.button`
 	text-transform: uppercase;
 	min-height: 48px;
 	font-weight: 400;
-	margin-top: 17px;
+	/* margin-top: 17px; */
 	font-size: 17px;
 	border: none;
 `;
@@ -115,38 +122,81 @@ const Content = styled.div`
 	height: 487px;
 	background-color: white;
 	padding: 20px 32px 60px;
-	margin: 0 95px 15px;
+	margin: 0 95px 130px;
 
 	.logoContainer {
-		/* width: 260px; */
-		/* width: 100%; */
 		color: black;
-		text-align: center;
-		margin: 100px 0 20px;
+		text-align: left;
+		margin: 50px 0 20px;
 		display: block;
 		height: 200px;
-		/* url(https://assets.nflxext.com/ffe/siteui/acquisition/simplicity/Devices.png) no-repeat 50% 50% */
-		/* background: url(https://assets.nflxext.com/ffe/siteui/acquisition/simplicity/Devices.png)
-			no-repeat 50% 50%; */
-		.imgContainer {
-			margin: 100px 0 20px;
-		}
-		img {
-			text-align: center;
-			width: 260px;
-		}
 		h1 {
 			font-size: 22px;
 			margin-bottom: 16px;
 		}
 		p {
 			font-size: 17px;
+			margin-bottom: 10px;
 		}
 	}
 	.contentContainer {
-		max-width: 340px;
-		text-align: center;
+		max-width: 460px;
+		text-align: left;
 		margin: 0 auto;
+	}
+
+	.textb {
+		margin-bottom: 12px;
+		position: relative;
+	}
+
+	.textb input {
+		width: 100%;
+		height: 54px;
+		/* border: none; */
+		/* border-radius: 6px; */
+		/* background-color: #333; */
+		font-size: 16px;
+		font-weight: 500;
+		color: black;
+		padding: 14px 60px 0 20px;
+	}
+
+	.textb input:focus ~ .placeholder,
+	.textb input:valid ~ .placeholder {
+		/* left: 10px; */
+		top: -9px;
+		font-size: 10px;
+		transition-duration: 0.2s;
+	}
+
+	.remember {
+		position: relative;
+		display: flex;
+		margin-bottom: 50px;
+		font-weight: 100;
+		font-size: 13px;
+	}
+
+	.remember2 {
+		color: #9d9d9d;
+	}
+
+	.checkbox1 {
+		margin-right: 5px;
+	}
+
+	.placeholder {
+		/* text-transform: uppercase; */
+		font-size: 14px;
+		font-weight: 500;
+		position: absolute;
+		line-height: 54px;
+		top: 0;
+		left: 20px;
+		color: #9d9d9d;
+		user-select: none;
+		pointer-events: none;
 	}
 `;
 

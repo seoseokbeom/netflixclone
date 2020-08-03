@@ -3,6 +3,9 @@ import StartPage from "./pages/index";
 import MoviePage from "./pages/Movie";
 import SignIn from "./pages/SignIn";
 import SignIn1 from "./pages/Signin1";
+import Signin1_2 from "./pages/Signin1_2";
+import Signin1_3 from "./pages/Signin1_3";
+import ManageProfile from "./pages/ManageProfile";
 import {
 	BrowserRouter as Router,
 	Switch,
@@ -20,6 +23,9 @@ class App extends Component {
 					<Route exact path="/movie" component={MoviePage} />
 					<Route exact path="/signin" component={SignIn} />
 					<Route exact path="/signin1" component={SignIn1} />
+					<Route exact path="/signin1_2" component={Signin1_2} />
+					<Route exact path="/signin1_3" component={Signin1_3} />
+					<Route exact path="/manage" component={ManageProfile} />
 				</Switch>
 			</Router>
 		);
