@@ -7,7 +7,7 @@ import three from "../../images/playMovie/three.jpg";
 import four from "../../images/playMovie/four.jpg";
 import five from "../../images/playMovie/five.jpg";
 import six from "../../images/playMovie/six.jpg";
-
+// https://github.com/seoseokbeom/netflixclone.git
 const content = [one, two, three, four, five, six];
 
 const ContentRow = () => {
@@ -25,7 +25,6 @@ const ContentRow = () => {
 				overflow-x: scroll;
 				::-webkit-scrollbar {
 					display: none;
-					
 				}
 				z-index: 2;
 				padding: 30px;
