@@ -16,16 +16,16 @@
 	box-sizing: border-box;
 }
 
-/* body {
+.entire {
+	background: white;
+	height: 100vh;
+}
+
+body {
 	font-family: "Helvetica";
 	-webkit-font-smoothing: antialiased;
 	background: white;
 	color: #fff;
 	overflow-x: hidden;
 	margin: 0;
-} */
-
-.entire {
-	background: white;
-	height: 100vh;
 }

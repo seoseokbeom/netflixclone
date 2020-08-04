@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Header from "../components/introPage/Header";
 // import { BrowserRouter } from "react-router-dom";
 import TabComponent from "../components/introPage/TabComponent";
+import "../css/App.css";
 
 class StartPage extends Component {
 	// state = {  }

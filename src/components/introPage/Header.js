@@ -20,7 +20,7 @@ class Header extends Component {
 				<div className="overlay"></div>
 				<div className="header-top">
 					<Logo src={logo} />
-					<Link className="signIn-btn" to="/signin">
+					<Link className="signIn-btn" to="/redirect">
 						Sign In
 					</Link>
 				</div>
@@ -40,7 +40,7 @@ class Header extends Component {
 							<SimpleForm>
 								<EmailInput placeholder="Email address" type="text" />
 							</SimpleForm>
-							<Link to="/signin">
+							<Link to="/redirect">
 								<Button>TRY 30 DAYS FREE</Button>
 							</Link>
 							<p>Email is required.</p>
@@ -151,6 +151,7 @@ const HeaderComponent = styled.div`
 		position: absolute;
 		translate: transform(-50%, -50%);
 		cursor: pointer;
+		color: white;
 		transition: background 0.2s ease-in;
 		&:hover {
 			background: var(--main-red-hover);

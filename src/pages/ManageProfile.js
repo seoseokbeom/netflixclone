@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import logo from "../svg/logo.svg";
 import styled from "styled-components";
 import Character from "../images/playMovie/netflixCharacter.png";
-// import "../css/App.css";
+import "../css/App.css";
 import MoviePage from "../pages/Movie";
 import {
 	BrowserRouter as Router,

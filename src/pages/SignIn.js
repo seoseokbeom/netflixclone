@@ -3,6 +3,7 @@ import logo from "../svg/logo.svg";
 // import {  } from "react-router-dom";
 import styled from "styled-components";
 import "../css/App.css";
+import fire from "../components/authentication/Fire";
 import Icon from "../components/moviePage/Icon";
 import { FaEyeSlash } from "react-icons/fa";
 import { GrFacebook } from "react-icons/gr";
@@ -25,12 +26,46 @@ class Header extends Component {
 
 		this.state = {
 			hidden: true,
+			email: "",
+			password: "",
 		};
 		this.toggleShow = this.toggleShow.bind(this);
+		this.login = this.login.bind(this);
+		this.handleChange = this.handleChange.bind(this);
+		this.signup = this.signup.bind(this);
 	}
 
 	toggleShow() {
 		this.setState({ hidden: !this.state.hidden });
+	}
+
+	handleChange(e) {
+		this.setState({ [e.target.name]: e.target.value });
+	}
+
+	login(e) {
+		e.preventDefault();
+		fire
+			.auth()
+			.signInWithEmailAndPassword(this.state.email, this.state.password)
+			.then((u) => {})
+			.catch((error) => {
+				console.log(error);
+			});
+	}
+
+	signup(e) {
+		e.preventDefault();
+		fire
+			.auth()
+			.createUserWithEmailAndPassword(this.state.email, this.state.password)
+			.then((u) => {})
+			.then((u) => {
+				console.log(u);
+			})
+			.catch((error) => {
+				console.log(error);
+			});
 	}
 	render() {
 		return (
@@ -43,12 +78,24 @@ class Header extends Component {
 						<h1>Sign In</h1>
 						{/* <FacebookBox /> */}
 						<div className="textb">
-							<input type="text" required />
+							<input
+								value={this.state.email}
+								onChange={this.handleChange}
+								type="text"
+								name="email"
+								required
+							/>
 							<div className="placeholder">Email or phone number</div>
 						</div>
 
 						<div className="textb">
-							<input type={this.state.hidden ? "password" : "text"} required />
+							<input
+								value={this.state.password}
+								onChange={this.handleChange}
+								type={this.state.hidden ? "password" : "text"}
+								name="password"
+								required
+							/>
 							<div className="placeholder">Password</div>
 							<button onClick={this.toggleShow} className="FaEyeSlash">
 								<FaEyeSlash color="white" size="18px" />
@@ -58,9 +105,11 @@ class Header extends Component {
 							{/* <Icon type="eye-slash" /> */}
 							{/* <div className="show-password fas fa-eye-slash"></div> */}
 						</div>
-						<Link to="/movie">
-							<button className="signin-btn">Sign In</button>
-						</Link>
+						<button type="submit" onClick={this.login} className="signin-btn">
+							Sign In
+						</button>
+						{/* <Link to="/redirect">
+						</Link> */}
 
 						<div className="remember">
 							<input className="checkbox1" type="checkbox" />

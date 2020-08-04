@@ -7,6 +7,7 @@ import Row from "../components/moviePage/Row";
 import requests from "../components/moviePage/requests";
 import Footer from "../components/moviePage/Footer";
 import ContentRow from "../components/moviePage/ContentRow";
+import "semantic-ui-css/semantic.min.css";
 
 class MoviePage extends Component {
 	state = {};

@@ -3,7 +3,7 @@ import logo from "../svg/logo.svg";
 // import {  } from "react-router-dom";
 import styled from "styled-components";
 // import "../";
-// import "../css/App.css";
+import "../css/App.css";
 import Icon from "../components/moviePage/Icon";
 import { FaEyeSlash } from "react-icons/fa";
 import { GrFacebook } from "react-icons/gr";

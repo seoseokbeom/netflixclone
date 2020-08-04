@@ -8,6 +8,11 @@ import { BsFillBellFill } from "react-icons/bs";
 import { GoTriangleDown } from "react-icons/go";
 import Character from "../../images/playMovie/netflixCharacter.png";
 import MoviePage from "../../pages/Movie";
+// import Dropdown3 from "./src/components/Dropdown3.js";
+// import Dropdown from "react-bootstrap/Dropdown";
+// import DropdownToggle from "react-bootstrap/DropdownToggle";
+import Dropdown3 from "./Dropdown3";
+
 import {
 	BrowserRouter as Router,
 	Switch,
@@ -59,9 +64,6 @@ const Navbar = () => {
 					<Link to="/movie">
 						<img height="75" src={netflixLogo} />
 					</Link>
-					{/* <a href="/">
-						<img height="75" src={netflixLogo} />
-					</a> */}
 				</li>
 
 				{leftLinks.map((link) => (
@@ -72,6 +74,20 @@ const Navbar = () => {
 			</ul>
 
 			<ul className="right">
+				{/* <Dropdown>
+						<Dropdown.Toggle variant="success" id="dropdown-basic">
+							Dropdown Button
+						</Dropdown.Toggle>
+
+						<Dropdown.Menu>
+							<Dropdown.Item href="#/action-1">Action</Dropdown.Item>
+							<Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
+							<Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+						</Dropdown.Menu>
+					</Dropdown> */}
+				{/* <li>
+					<Dropdown2 />
+				</li> */}
 				<li>
 					<Link to="/movie">
 						{/* <i className="fa fa-search" aria-hidden="true"></i> */}
@@ -89,12 +105,15 @@ const Navbar = () => {
 						<BsFillBellFill size={24} />
 					</Link>
 				</li>
-				<li style={{ verticalAlign: "baseline" }}>
+				<li>
+					<Dropdown3 />
+				</li>
+				{/* <li style={{ verticalAlign: "baseline" }}>
 					<Link to="/movie">
 						<img src={Character} alt="Character" style={{ maxWidth: 30 }} />
 						<GoTriangleDown height="30" className="svg" size={14} />
 					</Link>
-				</li>
+				</li> */}
 				{/* BsFillBellFill   */}
 			</ul>
 		</nav>
@@ -135,7 +154,12 @@ const NavbarCSS = css`
 	}
 
 	li {
-		margin-right: 20px;
+		margin-right: 27px;
+	}
+
+	li:last-child {
+		margin-right: 10px;
+		${"" /* background: #ff0000; */}
 	}
 
 	a {
