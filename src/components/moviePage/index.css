@@ -53,7 +53,10 @@ a {
 
 /* <li> */
 .nav-item {
+	/* padding-bottom: 20px; */
+	height: 70px;
 	width: calc(var(--nav-size) * 0.8);
+	width: 60px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -88,7 +91,7 @@ a {
 
 .dropdown {
 	position: absolute;
-	top: 58px;
+	top: 60px;
 	height: 300px;
 	width: 185px;
 	/* height: 1000px; */

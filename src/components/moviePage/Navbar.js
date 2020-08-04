@@ -105,9 +105,9 @@ const Navbar = () => {
 						<BsFillBellFill size={24} />
 					</Link>
 				</li>
-				<li>
-					<Dropdown3 />
-				</li>
+				{/* <li className="dropdown3"> */}
+				<Dropdown3 />
+				{/* </li> */}
 				{/* <li style={{ verticalAlign: "baseline" }}>
 					<Link to="/movie">
 						<img src={Character} alt="Character" style={{ maxWidth: 30 }} />
@@ -130,6 +130,9 @@ const NavbarCSS = css`
 		rgba(255, 255, 255, 1) 75%
 	); */
 	/* background: transparent; */
+	${"" /* .dropdown3 {
+	} */}
+
 	background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), transparent),
 		url("images/background.jpg");
 

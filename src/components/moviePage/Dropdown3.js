@@ -38,21 +38,19 @@ function NavItem(props) {
 	const [open, setOpen] = useState(false);
 
 	return (
-		<li className="nav-item">
-			<a
-				href="#"
-				className="icon-button"
-				onMouseEnter={() => setOpen(true)}
-				onMouseLeave={() => setOpen(false)}
-			>
+		<li
+			className="nav-item"
+			onMouseEnter={() => setOpen(true)}
+			onMouseLeave={() => setOpen(false)}
+		>
+			<a href="#" className="icon-button">
 				{/* // onClick={() => setOpen(!open)} */}
 				<span>
 					<img src={ProfileImg} alt="ProfileImg" width="32px" />
 				</span>
 				<span>{props.icon}</span>
+				{open && props.children}
 			</a>
-
-			{open && props.children}
 		</li>
 	);
 }
@@ -76,7 +74,7 @@ function DropdownMenu() {
 			<a
 				href="#"
 				className="menu-item"
-				onClick={() => props.goToMenu && setActiveMenu(props.goToMenu)}
+				// onClick={() => props.goToMenu && setActiveMenu(props.goToMenu)}
 			>
 				{/* <span className="icon-button">{props.leftIcon}</span> */}
 				{props.children}
