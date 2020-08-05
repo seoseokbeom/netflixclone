@@ -1,9 +1,12 @@
 .row {
 	position: relative;
+	/* position: fixed; */
 	overflow-x: scroll;
+	/* overflow-y: scroll; */
 	margin-left: 30px;
+	/* overflow: hidden; */
 	color: white;
-	overflow-y: visible;
+	/* overflow-y: hidden; */
 	/* z-index: -1; */
 }
 
@@ -12,6 +15,9 @@
 }
 
 .row_posters {
+	/* position: fixed; */
+	overflow-x: scroll;
+	overflow-y: hidden;
 	z-index: 10;
 	display: flex;
 	padding: 20px;

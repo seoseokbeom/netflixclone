@@ -11,7 +11,7 @@ import ProfileImg from "../../images/playMovie/netflixCharacter.png";
 import React, { useState, useEffect, useRef } from "react";
 import { CSSTransition } from "react-transition-group";
 import { DivideOutline } from "styled-icons/typicons";
-
+import fire from "../authentication/Fire";
 function Dropdown3() {
 	return (
 		<div>
@@ -24,6 +24,10 @@ function Dropdown3() {
 			</NavItem>
 		</div>
 	);
+}
+
+function logout() {
+	fire.auth().signOut();
 }
 
 // function Navbar(props) {
@@ -97,15 +101,16 @@ function DropdownMenu() {
 					<DropdownItem>Account</DropdownItem>
 					<DropdownItem
 						leftIcon={<CogIcon />}
-						rightIcon={<ChevronIcon />}
+						// rightIcon={<ChevronIcon />}
 						goToMenu="settings"
 					>
 						Profile
 					</DropdownItem>
 					<DropdownItem
 						leftIcon="🦧"
-						rightIcon={<ChevronIcon />}
+						// rightIcon={<ChevronIcon />}
 						goToMenu="animals"
+						onClick={logout}
 					>
 						Sign out of netflix
 					</DropdownItem>

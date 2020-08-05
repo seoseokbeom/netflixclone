@@ -10,7 +10,12 @@ import ContentRow from "../components/moviePage/ContentRow";
 import "semantic-ui-css/semantic.min.css";
 
 class MoviePage extends Component {
-	state = {};
+	constructor() {
+		super();
+		this.state = {
+			user: null,
+		};
+	}
 	render() {
 		return (
 			<div>
