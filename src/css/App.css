@@ -45,7 +45,7 @@ a {
 /* Header Section */
 .header-container {
 	width: 100vw;
-	height: 80vh;
+	height: 115vh;
 	position: relative;
 	background: url(../images/bg2.jpg) no-repeat center center/cover;
 }

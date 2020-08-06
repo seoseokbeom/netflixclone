@@ -48,7 +48,7 @@ class Header extends Component {
 		fire
 			.auth()
 			.signInWithEmailAndPassword(this.state.email, this.state.password)
-			.then((u) => {})
+			.then((u) => { })
 			.catch((error) => {
 				console.log(error);
 			});
@@ -59,7 +59,7 @@ class Header extends Component {
 		fire
 			.auth()
 			.createUserWithEmailAndPassword(this.state.email, this.state.password)
-			.then((u) => {})
+			.then((u) => { })
 			.then((u) => {
 				console.log(u);
 			})
@@ -70,6 +70,7 @@ class Header extends Component {
 	render() {
 		return (
 			<HeaderComponent className="header-container">
+				<div className="overlay"></div>
 				<div className="header-top">
 					<Logo src={logo} />
 				</div>
@@ -150,13 +151,79 @@ class Header extends Component {
 						</div>
 					</LoginContent>
 				</LoginBody>
+
+				<Footer>
+					<div className="container">
+						<p className="footer-top">Question? Call 00-308-321-0161</p>
+						<div className="footer_container">
+							<a className="footer-item">Gift Card Terms</a>
+							<a className="footer-item">Terms of Use</a>
+							<a className="footer-item">Privacy Statement</a>
+						</div>
+
+						<div className="description2">
+							<p>
+								Netflix Services Korea Ltd. E-Commerce Registration Number: Je
+								2018-Seoul Jong-ro-0426 Ho. Phone: 00-308-321-0161
+								Representative: Reginald Shawn Thompson
+							</p>
+							<p>Email: korea@netflix.com Address: 20F,</p>
+							<p>
+								Tower A, Centropolis Building 26, Ujeongguk-ro, Jongno-gu,
+								Seoul, 03161 Republic of Korea Hosted by: Amazon Web Services
+								Inc.
+							</p>
+						</div>
+					</div>
+				</Footer>
 			</HeaderComponent>
 		);
 	}
 }
 
 export default Header;
-
+const Footer = styled.div`
+	position:relative;
+	width:100%;
+	height:26.7%;
+	// margin-top:200px 174px;
+	background: rgba(0, 0, 0, 0.7);
+	.container {        
+		
+		max-width: 1000px;
+		p {    
+			margin: 1rem 0 1.5em;
+			line-height: 1.35em;
+			font-size: 1.5em;
+		}
+		padding: 25px 0;
+		margin: 0 auto;
+		color: #757575;
+	}
+	
+	.footer_container {
+		display: flex;
+		justify-content: space-between;
+		a {
+			flex-basis: auto;
+			width: 200px;
+			/* text-align: left; */
+			margin: 0 0 25px;
+			padding: 0 12px 0 0;
+			color: #757575;
+		}
+	}
+	
+	.description2 {
+		font-size:8px;
+		a {
+			color: #7141eb;
+		}
+		a:hover {
+			text-decoration: underline;
+		}
+	}
+`;
 const LoginContent = styled.div`
 	* {
 		margin: 0;

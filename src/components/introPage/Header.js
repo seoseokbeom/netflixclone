@@ -48,12 +48,24 @@ class Header extends Component {
 					</EmailForm>
 					{/* </div> */}
 				</StoryCard>
+				<Footer >
+
+				</Footer>
 			</HeaderComponent>
 		);
 	}
 }
 
 export default Header;
+
+const Footer = styled.div`
+position:relative;
+width:100%;
+height:20%;
+	margin-top:200px 174px;
+	background-color: red;
+
+`;
 
 const EmailLockUp = styled.div`
 	p {
@@ -112,6 +124,7 @@ const StoryCard = styled.div`
 	position: relative;
 	width: 100%;
 	padding: 75px 0;
+	padding-bottom:180px;
 	max-width: 950px;
 	margin: 0 auto;
 
