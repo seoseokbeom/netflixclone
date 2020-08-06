@@ -25,6 +25,7 @@ class Header extends Component {
 		super(props);
 
 		this.state = {
+			user: null,
 			hidden: true,
 			email: "",
 			password: "",

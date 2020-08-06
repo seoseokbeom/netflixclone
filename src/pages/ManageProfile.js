@@ -201,9 +201,11 @@ const StoryCard = styled.div`
 	text-align: center;
 	z-index: 1;
 	.comment {
+		line-height: 1.2;
 		width: 100%;
 		color: #fff;
 		font-size: 3.5vw;
+		display: block;
 	}
 
 	.choose-profile {

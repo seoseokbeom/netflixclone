@@ -59,14 +59,14 @@ export class Signin1 extends Component {
 					<div className="footer-inside">
 						<div className="question">Questions? Call 00-308-321-0161</div>
 						<div className="footer_container">
-							<a href="#">FAQ</a>
-							<a href="#">Help Center</a>
-							<a href="#">Terms of Use</a>
-							<a href="#">Privacy</a>
+							<a href="https://help.netflix.com/en/node/412" target="_blank">FAQ</a>
+							<a href="https://help.netflix.com/en/" target="_blank">Help Center</a>
+							<a href="https://help.netflix.com/legal/termsofuse" target="_blank">Terms of Use</a>
+							<a href="https://help.netflix.com/legal/privacy" target="_blank">Privacy</a>
 						</div>
 						<div className="footer_container">
-							<a href="#">Cookie Preferences</a>
-							<a href="#">Corporate Information</a>
+							<a href="https://help.netflix.com/legal/privacy#cookies" target="_blank">Cookie Preferences</a>
+							<a href="https://help.netflix.com/en/node/2101" target="_blank">Corporate Information</a>
 							<a href="#"></a>
 							<a href="#"></a>
 						</div>
