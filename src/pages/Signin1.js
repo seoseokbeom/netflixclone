@@ -67,8 +67,8 @@ export class Signin1 extends Component {
 						<div className="footer_container">
 							<a href="#">Cookie Preferences</a>
 							<a href="#">Corporate Information</a>
-							<a href="#">a</a>
-							<a href="#">a</a>
+							<a href="#"></a>
+							<a href="#"></a>
 						</div>
 						<div className="description">
 							<p>

@@ -12,6 +12,13 @@ import React, { useState, useEffect, useRef } from "react";
 import { CSSTransition } from "react-transition-group";
 import { DivideOutline } from "styled-icons/typicons";
 import fire from "../authentication/Fire";
+import {
+	BrowserRouter as Router,
+	Switch,
+	Route,
+	Link,
+	NavLink,
+} from "react-router-dom"
 function Dropdown3() {
 	return (
 		<div>
@@ -78,7 +85,7 @@ function DropdownMenu() {
 			<a
 				href="#"
 				className="menu-item"
-				// onClick={() => props.goToMenu && setActiveMenu(props.goToMenu)}
+			// onClick={() => props.goToMenu && setActiveMenu(props.goToMenu)}
 			>
 				{/* <span className="icon-button">{props.leftIcon}</span> */}
 				{props.children}
@@ -86,6 +93,15 @@ function DropdownMenu() {
 			</a>
 		);
 	}
+
+	function logout() {
+		return fire.auth().signOut().then(function () {
+			// Sign-out successful.
+		}).catch(function (error) {
+			// An error happened.
+		});
+	}
+
 
 	return (
 		//style={{ height: menuHeight }}
@@ -99,21 +115,25 @@ function DropdownMenu() {
 			>
 				<div className="menu">
 					<DropdownItem>Account</DropdownItem>
-					<DropdownItem
-						leftIcon={<CogIcon />}
-						// rightIcon={<ChevronIcon />}
-						goToMenu="settings"
-					>
-						Profile
+					<Link to="/manage" >
+						<DropdownItem
+							leftIcon={<CogIcon />}
+							// rightIcon={<ChevronIcon />}
+							goToMenu="settings"
+						>
+							Profile
 					</DropdownItem>
-					<DropdownItem
-						leftIcon="🦧"
-						// rightIcon={<ChevronIcon />}
-						goToMenu="animals"
-						onClick={logout}
-					>
-						Sign out of netflix
-					</DropdownItem>
+					</Link>
+					<Link to="/signin">
+						<DropdownItem
+							leftIcon="🦧"
+							// rightIcon={<ChevronIcon />}
+							goToMenu="animals"
+							onClick={logout}
+						>
+							Sign out of netflix
+						</DropdownItem>
+					</Link>
 				</div>
 			</CSSTransition>
 
@@ -122,7 +142,7 @@ function DropdownMenu() {
 				timeout={500}
 				classNames="menu-secondary"
 				unmountOnExit
-				// onEnter={calcHeight}
+			// onEnter={calcHeight}
 			>
 				<div className="menu">
 					<DropdownItem goToMenu="main" leftIcon={<ArrowIcon />}>
@@ -140,7 +160,7 @@ function DropdownMenu() {
 				timeout={500}
 				classNames="menu-secondary"
 				unmountOnExit
-				// onEnter={calcHeight}
+			// onEnter={calcHeight}
 			>
 				<div className="menu">
 					<DropdownItem goToMenu="main" leftIcon={<ArrowIcon />}>

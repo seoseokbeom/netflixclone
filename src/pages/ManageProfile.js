@@ -18,6 +18,7 @@ class ManageProfile extends Component {
 		return (
 			<div>
 				<div className="overlay"></div>
+				<div className="overlay"></div>
 
 				<AAA>
 					<div className="header">
