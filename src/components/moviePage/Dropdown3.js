@@ -18,7 +18,7 @@ import {
 	Route,
 	Link,
 	NavLink,
-} from "react-router-dom"
+} from "react-router-dom";
 function Dropdown3() {
 	return (
 		<div>
@@ -85,7 +85,7 @@ function DropdownMenu() {
 			<a
 				href="#"
 				className="menu-item"
-			// onClick={() => props.goToMenu && setActiveMenu(props.goToMenu)}
+				// onClick={() => props.goToMenu && setActiveMenu(props.goToMenu)}
 			>
 				{/* <span className="icon-button">{props.leftIcon}</span> */}
 				{props.children}
@@ -95,13 +95,16 @@ function DropdownMenu() {
 	}
 
 	function logout() {
-		return fire.auth().signOut().then(function () {
-			// Sign-out successful.
-		}).catch(function (error) {
-			// An error happened.
-		});
+		return fire
+			.auth()
+			.signOut()
+			.then(function () {
+				// Sign-out successful.
+			})
+			.catch(function (error) {
+				// An error happened.
+			});
 	}
-
 
 	return (
 		//style={{ height: menuHeight }}
@@ -115,16 +118,16 @@ function DropdownMenu() {
 			>
 				<div className="menu">
 					<DropdownItem>Account</DropdownItem>
-					<Link to="/manage" >
+					<Link to="/manage">
 						<DropdownItem
 							leftIcon={<CogIcon />}
 							// rightIcon={<ChevronIcon />}
 							goToMenu="settings"
 						>
 							Profile
-					</DropdownItem>
+						</DropdownItem>
 					</Link>
-					<Link to="/signin">
+					<Link to="/redirect">
 						<DropdownItem
 							leftIcon="🦧"
 							// rightIcon={<ChevronIcon />}
@@ -142,7 +145,7 @@ function DropdownMenu() {
 				timeout={500}
 				classNames="menu-secondary"
 				unmountOnExit
-			// onEnter={calcHeight}
+				// onEnter={calcHeight}
 			>
 				<div className="menu">
 					<DropdownItem goToMenu="main" leftIcon={<ArrowIcon />}>
@@ -160,7 +163,7 @@ function DropdownMenu() {
 				timeout={500}
 				classNames="menu-secondary"
 				unmountOnExit
-			// onEnter={calcHeight}
+				// onEnter={calcHeight}
 			>
 				<div className="menu">
 					<DropdownItem goToMenu="main" leftIcon={<ArrowIcon />}>

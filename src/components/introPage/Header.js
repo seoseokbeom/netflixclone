@@ -4,6 +4,7 @@ import logo from "../../svg/logo.svg";
 import styled from "styled-components";
 import "../../css/App.css";
 import MoviePage from "../../pages/Movie";
+import TabComponent from "./TabComponent";
 import {
 	BrowserRouter as Router,
 	Switch,
@@ -48,9 +49,8 @@ class Header extends Component {
 					</EmailForm>
 					{/* </div> */}
 				</StoryCard>
-				<Footer >
-
-				</Footer>
+				<TabComponent />
+				<Footer></Footer>
 			</HeaderComponent>
 		);
 	}
@@ -59,12 +59,11 @@ class Header extends Component {
 export default Header;
 
 const Footer = styled.div`
-position:relative;
-width:100%;
-height:20%;
-	margin-top:200px 174px;
+	position: relative;
+	width: 100%;
+	height: 20%;
+	margin-top: 200px 174px;
 	background-color: red;
-
 `;
 
 const EmailLockUp = styled.div`
@@ -124,7 +123,7 @@ const StoryCard = styled.div`
 	position: relative;
 	width: 100%;
 	padding: 75px 0;
-	padding-bottom:180px;
+	padding-bottom: 180px;
 	max-width: 950px;
 	margin: 0 auto;
 
