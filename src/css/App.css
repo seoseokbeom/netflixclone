@@ -32,6 +32,10 @@ a {
 	color: #fff;
 }
 
+.tabcomponent {
+	z-index: 5;
+}
+
 .overlay {
 	position: absolute;
 	z-index: 0;
@@ -42,10 +46,21 @@ a {
 	background: rgba(0, 0, 0, 0.7);
 }
 
+.profilePage {
+	position: absolute;
+	height: 100%;
+	overflow: hidden;
+}
 /* Header Section */
 .header-container {
 	width: 100vw;
 	height: 115vh;
+	position: relative;
+	background: url(../images/bg2.jpg) no-repeat center center/cover;
+}
+.header-container_intro {
+	width: 100vw;
+	height: 85vh;
 	position: relative;
 	background: url(../images/bg2.jpg) no-repeat center center/cover;
 }

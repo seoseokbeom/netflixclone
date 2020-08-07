@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import logo from "../svg/logo.svg";
+// import logo from "../svg/logo.svg";
 import styled from "styled-components";
 import Character from "../images/playMovie/netflixCharacter.png";
 import "../css/App.css";
@@ -20,11 +20,11 @@ class ManageProfile extends Component {
 				<div className="overlay"></div>
 				<div className="overlay"></div>
 
-				<AAA>
+				{/* <AAA>
 					<div className="header">
 						<Logo src={logo} />
 					</div>
-				</AAA>
+				</AAA> */}
 				<StoryCard>
 					<div className="comment">Who's watching?</div>
 					<ul className="choose-profile">

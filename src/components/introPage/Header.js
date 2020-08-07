@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import logo from "../../svg/logo.svg";
+import logo from "../../../src/images/svg/logo.svg";
 // import {  } from "react-router-dom";
 import styled from "styled-components";
 import "../../css/App.css";
@@ -17,53 +17,65 @@ class Header extends Component {
 	state = {};
 	render() {
 		return (
-			<HeaderComponent className="header-container">
-				<div className="overlay"></div>
-				<div className="header-top">
-					<Logo src={logo} />
-					<Link className="signIn-btn" to="/redirect">
-						Sign In
-					</Link>
-				</div>
-				{/* Header Content */}
-				<StoryCard>
-					{/* <div className="header-content"> */}
-					<HeroCard>
-						<Title>Unlimited movies, TV shows, and more.</Title>
-						<h2>Watch anywhere. Cancel at any time.</h2>
-					</HeroCard>
-					<EmailForm>
-						<h3>
-							Ready to watch? Enter your email to create or restart your
-							membership.
-						</h3>
-						<EmailLockUp>
-							<SimpleForm>
-								<EmailInput placeholder="Email address" type="text" />
-							</SimpleForm>
-							<Link to="/redirect">
-								<Button>TRY 30 DAYS FREE</Button>
-							</Link>
-							<p>Email is required.</p>
-						</EmailLockUp>
-					</EmailForm>
-					{/* </div> */}
-				</StoryCard>
-				<TabComponent />
-				<Footer></Footer>
-			</HeaderComponent>
+			<div>
+				<HeaderComponent className="header-container_intro">
+					<div className="overlay"></div>
+					<div className="header-top">
+						<Logo src={logo} />
+						<Link className="signIn-btn" to="/redirect">
+							Sign In
+						</Link>
+					</div>
+					{/* Header Content */}
+					<StoryCard>
+						{/* <div className="header-content"> */}
+						<HeroCard>
+							<Title>Unlimited movies, TV shows, and more.</Title>
+							<h2>Watch anywhere. Cancel at any time.</h2>
+						</HeroCard>
+						<EmailForm>
+							<h3>
+								Ready to watch? Enter your email to create or restart your
+								membership.
+							</h3>
+							<EmailLockUp>
+								<SimpleForm>
+									<EmailInput placeholder="Email address" type="text" />
+								</SimpleForm>
+								<Link to="/redirect">
+									<Button>TRY 30 DAYS FREE</Button>
+								</Link>
+								<p>Email is required.</p>
+							</EmailLockUp>
+						</EmailForm>
+						{/* </div> */}
+					</StoryCard>
+				</HeaderComponent>
+				<Tab className="tabcomponent">
+					<TabComponent />
+				</Tab>
+				<Footer>slafjelk</Footer>
+			</div>
 		);
 	}
 }
 
 export default Header;
 
+const Tab = styled.div`
+	width: 100%;
+	height: 15vh;
+	background-color: black;
+	position: relative;
+	border-bottom: solid 7px #222;
+`;
+
 const Footer = styled.div`
 	position: relative;
 	width: 100%;
 	height: 20%;
 	margin-top: 200px 174px;
-	background-color: red;
+	/* background-color: red; */
 `;
 
 const EmailLockUp = styled.div`
