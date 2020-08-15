@@ -6,6 +6,8 @@ import TabDoor from "./tab_nav/TabDoor";
 import TabDevices from "./tab_nav/TabDevices";
 import TabPrices from "./tab_nav/TabPrices";
 import TabComponentOne from "./TabComponentOne";
+import TabComponentTwo from "./TabComponentTwo";
+import TabComponentThree from "./TabComponentThree";
 class TabComponent extends Component {
 	state = {
 		tabIndex: 0,
@@ -15,6 +17,7 @@ class TabComponent extends Component {
 			<div className="tabcomponent">
 				<Tabs
 					className="tabs"
+					// style={{ backgroundColor: "white" }}
 					selectedIndex={this.state.tabIndex}
 					onSelect={(tabIndex) => this.setState({ tabIndex })}
 				>
@@ -57,6 +60,12 @@ class TabComponent extends Component {
 					{/* Tabs Content */}
 					<TabPanel>
 						<TabComponentOne />
+					</TabPanel>
+					<TabPanel>
+						<TabComponentTwo />
+					</TabPanel>
+					<TabPanel>
+						<TabComponentThree />
 					</TabPanel>
 				</Tabs>
 			</div>

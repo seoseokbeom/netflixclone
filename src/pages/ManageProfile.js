@@ -16,7 +16,7 @@ class ManageProfile extends Component {
 	state = {};
 	render() {
 		return (
-			<div>
+			<div className="profilePage">
 				<div className="overlay"></div>
 				<div className="overlay"></div>
 

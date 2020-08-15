@@ -2,6 +2,7 @@
 .tab-icon-door {
 	width: 2.8125rem;
 	height: 2.8125rem;
+	/* bottom: 1rem; */
 	fill: #757575;
 }
 /* Tab Nav #2 */
@@ -9,7 +10,6 @@
 	width: 9.68rem;
 	height: 9.68rem;
 	fill: #757575;
-	top: 7rem;
 }
 
 /* Tab Nav #3 */
@@ -23,14 +23,8 @@
 	display: grid;
 }
 
-/* .tab_left {
-	background: red;
-}
-
-.tab_right {
-	background: blue;
-} */
 .tabs {
+	overflow: hidden;
 	padding-top: 2.2rem;
 }
 

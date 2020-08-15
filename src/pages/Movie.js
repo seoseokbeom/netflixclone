@@ -13,7 +13,7 @@ class MoviePage extends Component {
 	constructor() {
 		super();
 		this.state = {
-			user: null,
+			user: true,
 		};
 	}
 	render() {

@@ -4,6 +4,7 @@ import logo from "../../../src/images/svg/logo.svg";
 import styled from "styled-components";
 import "../../css/App.css";
 import MoviePage from "../../pages/Movie";
+import Footer2 from "../moviePage/Footer";
 import TabComponent from "./TabComponent";
 import {
 	BrowserRouter as Router,
@@ -53,8 +54,8 @@ class Header extends Component {
 				</HeaderComponent>
 				<Tab className="tabcomponent">
 					<TabComponent />
+					<Footer2 color="black" />
 				</Tab>
-				<Footer>slafjelk</Footer>
 			</div>
 		);
 	}

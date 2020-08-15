@@ -102,20 +102,12 @@ class Header extends Component {
 							<button onClick={this.toggleShow} className="FaEyeSlash">
 								<FaEyeSlash color="white" size="18px" />
 							</button>
-							{/* <div >
-							</div> */}
-							{/* <Icon type="eye-slash" /> */}
-							{/* <div className="show-password fas fa-eye-slash"></div> */}
 						</div>
 						<button type="submit" onClick={this.login} className="signin-btn">
 							Sign In
 						</button>
-						{/* <Link to="/redirect">
-						</Link> */}
-
 						<div className="remember">
 							<input className="checkbox1" type="checkbox" />
-							{/* <Icon type="check" /> */}
 							<div className="remember2"> Remember me</div>
 
 							<Link to="/signin1">
@@ -123,14 +115,12 @@ class Header extends Component {
 									Need help?
 								</a>
 							</Link>
-							{/* <div className="fas fa-check"></div> */}
 						</div>
 
 						<div>
 							<div className="facebook-login">
 								<a href="#">
 									<div className="icon-color">
-										{/* <Icon color="#3b5998" type="facebook-square" /> */}
 										<GrFacebook color="#3b5998" size="20px" />
 									</div>
 								</a>
