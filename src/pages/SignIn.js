@@ -8,7 +8,8 @@ import Icon from "../components/moviePage/Icon";
 import { FaEyeSlash } from "react-icons/fa";
 import { GrFacebook } from "react-icons/gr";
 import { Toaster, Intent } from "@blueprintjs/core";
-import MoviePage from "../pages/Movie";
+import Movie from "../pages/Movie";
+import ManageProfile from "../pages/ManageProfile";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import {
@@ -81,9 +82,11 @@ class Header extends Component {
 				this.loginForm.reset();
 				this.setState({ redirect: true });
 				// console.log(user, user.email);
-				if (user && user.email) {
-				}
+				// if (user && user.email) {
+				// }
 				console.log("kkkkkkkk", this.state.user);
+
+				// <Link to="/movie"></Link>;
 			})
 			.catch((error) => {
 				console.log("sssssssss", error);
@@ -108,6 +111,10 @@ class Header extends Component {
 			});
 	}
 	render() {
+		if (this.state.authenticated) {
+			return <ManageProfile />;
+		}
+
 		return (
 			<HeaderComponent className="header-container">
 				<div className="overlay"></div>

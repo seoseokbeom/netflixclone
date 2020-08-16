@@ -2,8 +2,8 @@ import React, { Component } from "react";
 // import logo from "../svg/logo.svg";
 import styled from "styled-components";
 import Character from "../images/playMovie/netflixCharacter.png";
-import "../css/App.css";
-import MoviePage from "../pages/Movie";
+// import "../css/App.css";
+// import MoviePage from "../pages/Movie";
 import {
 	BrowserRouter as Router,
 	Switch,
@@ -16,7 +16,7 @@ class ManageProfile extends Component {
 	state = {};
 	render() {
 		return (
-			<div className="profilePage">
+			<Manage>
 				<div className="overlay"></div>
 				<div className="overlay"></div>
 
@@ -85,13 +85,17 @@ class ManageProfile extends Component {
 					<div className="button"></div>
 					<HeroCard></HeroCard>
 				</StoryCard>
-			</div>
+			</Manage>
 		);
 	}
 	0;
 }
 
 export default ManageProfile;
+
+const Manage = styled.div`
+	width: 100%;
+`;
 
 const Logo = styled.img`
 	width: 92.5px;
@@ -164,7 +168,7 @@ const EmailInput = styled.input`
 	float: left;
 	position: relative;
 	padding: 0 1em;
-	width: 60%;
+	/* width: 60%; */
 	background: #fff;
 	max-width: 450px;
 	height: 62px;

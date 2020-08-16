@@ -10,6 +10,7 @@ import { ReactComponent as BoltIcon } from "./icons/bolt.svg";
 import ProfileImg from "../../images/playMovie/netflixCharacter.png";
 import React, { useState, useEffect, useRef } from "react";
 import { CSSTransition } from "react-transition-group";
+import SignIn from "../../pages/SignIn";
 import { DivideOutline } from "styled-icons/typicons";
 import fire from "../authentication/Fire";
 import {
@@ -22,10 +23,6 @@ import {
 function Dropdown3() {
 	return (
 		<div>
-			{/* <NavItem icon={<PlusIcon />} />
-			<NavItem icon={<BellIcon />} />
-			<NavItem icon={<MessengerIcon />} /> */}
-			{/* icon={<CaretIcon />}  */}
 			<NavItem icon={<CaretIcon />}>
 				<DropdownMenu></DropdownMenu>
 			</NavItem>
@@ -35,15 +32,8 @@ function Dropdown3() {
 
 function logout() {
 	fire.auth().signOut();
+	return <SignIn />;
 }
-
-// function Navbar(props) {
-// 	return (
-// 		<nav className="navbar">
-// 			<ul className="navbar-nav">{props.children}</ul>
-// 		</nav>
-// 	);
-// }
 
 function NavItem(props) {
 	const [open, setOpen] = useState(false);
@@ -55,7 +45,6 @@ function NavItem(props) {
 			onMouseLeave={() => setOpen(false)}
 		>
 			<a href="#" className="icon-button">
-				{/* // onClick={() => setOpen(!open)} */}
 				<span>
 					<img src={ProfileImg} alt="ProfileImg" width="32px" />
 				</span>
@@ -75,18 +64,9 @@ function DropdownMenu() {
 		setMenuHeight(dropdownRef.current?.firstChild.offsetHeight);
 	}, []);
 
-	// function calcHeight(el) {
-	// 	const height = el.offsetHeight;
-	// 	setMenuHeight(height);
-	// }
-
 	function DropdownItem(props) {
 		return (
-			<a
-				href="#"
-				className="menu-item"
-				// onClick={() => props.goToMenu && setActiveMenu(props.goToMenu)}
-			>
+			<a href="#" className="menu-item">
 				{/* <span className="icon-button">{props.leftIcon}</span> */}
 				{props.children}
 				<span className="icon-right">{props.rightIcon}</span>
@@ -127,7 +107,7 @@ function DropdownMenu() {
 							Profile
 						</DropdownItem>
 					</Link>
-					<Link to="/redirect">
+					<Link to="/signin">
 						<DropdownItem
 							leftIcon="🦧"
 							// rightIcon={<ChevronIcon />}

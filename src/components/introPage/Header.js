@@ -34,7 +34,7 @@ class Header extends Component {
 					<div className="overlay"></div>
 					<div className="header-top">
 						<Logo src={logo} />
-						<Link className="signIn-btn" to="/redirect">
+						<Link className="signIn-btn" to="/signin">
 							Sign In
 						</Link>
 					</div>
@@ -54,7 +54,7 @@ class Header extends Component {
 								<SimpleForm>
 									<EmailInput placeholder="Email address" type="text" />
 								</SimpleForm>
-								<Link to="/redirect">
+								<Link to="/signin">
 									<Button>TRY 30 DAYS FREE</Button>
 								</Link>
 								<p>Email is required.</p>
@@ -76,7 +76,7 @@ class Header extends Component {
 									<SimpleForm>
 										<EmailInput placeholder="Email address" type="text" />
 									</SimpleForm>
-									<Link to="/redirect">
+									<Link to="/signin">
 										<Button>TRY 30 DAYS FREE</Button>
 									</Link>
 									<p>Email is required.</p>
