@@ -9,6 +9,8 @@ import { FaEyeSlash } from "react-icons/fa";
 import { GrFacebook } from "react-icons/gr";
 import { Toaster, Intent } from "@blueprintjs/core";
 import MoviePage from "../pages/Movie";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import {
 	BrowserRouter as Router,
 	Switch,
@@ -17,6 +19,7 @@ import {
 	NavLink,
 } from "react-router-dom";
 
+toast.configure();
 class Header extends Component {
 	constructor(props) {
 		super(props);
@@ -45,15 +48,22 @@ class Header extends Component {
 
 	setCurrentUser(user) {
 		if (user) {
-			this.setState({
-				user: user,
-				authenticated: true,
-			});
+			this.setState(
+				{
+					user: user,
+					authenticated: true,
+				},
+				console.log(this.state.user, this.state.authenticated)
+			);
 		} else {
-			this.setState({
-				user: null,
-				authenticated: false,
-			});
+			this.setState(
+				{
+					user: null,
+					authenticated: false,
+				},
+
+				console.log(this.state.user, this.state.authenticated)
+			);
 		}
 	}
 
@@ -61,19 +71,26 @@ class Header extends Component {
 		e.preventDefault();
 		const email = this.emailInput.value;
 		const password = this.passwordInput.value;
+		console.log(email, password);
 		fire
 			.auth()
-			.signInWithEmailAndPassword(this.state.email, this.state.password)
+			.signInWithEmailAndPassword(email, password)
 			.then((user) => {
+				this.setCurrentUser(user);
+				// console.log(user, user.email);
+				this.loginForm.reset();
+				this.setState({ redirect: true });
+				// console.log(user, user.email);
 				if (user && user.email) {
-					this.loginForm.reset();
-					this.props.setCurrentUser(user);
-					this.setState({ redirect: true });
 				}
+				console.log("kkkkkkkk", this.state.user);
 			})
 			.catch((error) => {
-				console.log(error);
-				this.toaster.show({ intent: Intent.DANGER, message: error.message });
+				console.log("sssssssss", error);
+				// alert(error.message);
+				toast.error(error.message);
+
+				// this.toaster.show({ message: "error.message" });
 			});
 	}
 
@@ -82,11 +99,11 @@ class Header extends Component {
 		fire
 			.auth()
 			.createUserWithEmailAndPassword(this.state.email, this.state.password)
-			.then((u) => {})
 			.then((u) => {
 				console.log(u);
 			})
 			.catch((error) => {
+				this.toaster.show({ intent: Intent.DANGER, message: error.message });
 				console.log(error);
 			});
 	}
@@ -97,17 +114,34 @@ class Header extends Component {
 				<div className="header-top">
 					<Logo src={logo} />
 				</div>
-				<form>
+				<form
+					onSubmit={(e) => {
+						this.login(e);
+					}}
+					ref={(form) => {
+						this.loginForm = form;
+					}}
+				>
 					{/* onSubmit={} */}
 					<LoginBody>
 						<LoginContent>
 							<h1>Sign In</h1>
+							<Toaster
+								ref={(element) => {
+									this.toaster = element;
+								}}
+							/>
 							{/* <FacebookBox /> */}
+
 							<div className="textb">
 								<input
 									value={this.state.email}
+									ref={(input) => {
+										this.emailInput = input;
+									}}
+									// placeholder="Email"
 									onChange={this.handleChange}
-									type="text"
+									type="email"
 									name="email"
 									required
 								/>
@@ -117,6 +151,10 @@ class Header extends Component {
 							<div className="textb">
 								<input
 									value={this.state.password}
+									ref={(input) => {
+										this.passwordInput = input;
+									}}
+									// placeholder="Password"
 									onChange={this.handleChange}
 									type={this.state.hidden ? "password" : "text"}
 									name="password"
