@@ -1,39 +1,19 @@
 {
   "files": {
-<<<<<<< HEAD
-    "main.css": "/netflixclone/static/css/main.d9a69ec1.chunk.css",
-    "main.js": "/netflixclone/static/js/main.39644967.chunk.js",
-    "main.js.map": "/netflixclone/static/js/main.39644967.chunk.js.map",
+    "main.css": "/netflixclone/static/css/main.20f6f9b6.chunk.css",
+    "main.js": "/netflixclone/static/js/main.9b0e79b2.chunk.js",
+    "main.js.map": "/netflixclone/static/js/main.9b0e79b2.chunk.js.map",
     "runtime-main.js": "/netflixclone/static/js/runtime-main.851a363e.js",
     "runtime-main.js.map": "/netflixclone/static/js/runtime-main.851a363e.js.map",
-    "static/js/2.f22cc960.chunk.js": "/netflixclone/static/js/2.f22cc960.chunk.js",
-    "static/js/2.f22cc960.chunk.js.map": "/netflixclone/static/js/2.f22cc960.chunk.js.map",
+    "static/css/2.d1d90996.chunk.css": "/netflixclone/static/css/2.d1d90996.chunk.css",
+    "static/js/2.ac938dcc.chunk.js": "/netflixclone/static/js/2.ac938dcc.chunk.js",
+    "static/js/2.ac938dcc.chunk.js.map": "/netflixclone/static/js/2.ac938dcc.chunk.js.map",
     "index.html": "/netflixclone/index.html",
-    "precache-manifest.19b1f3ab28544af467731fa97451dc3b.js": "/netflixclone/precache-manifest.19b1f3ab28544af467731fa97451dc3b.js",
+    "precache-manifest.79f0b788d3f2fc66b5cbef09e24cf166.js": "/netflixclone/precache-manifest.79f0b788d3f2fc66b5cbef09e24cf166.js",
     "service-worker.js": "/netflixclone/service-worker.js",
-    "static/css/main.d9a69ec1.chunk.css.map": "/netflixclone/static/css/main.d9a69ec1.chunk.css.map",
-    "static/js/2.f22cc960.chunk.js.LICENSE.txt": "/netflixclone/static/js/2.f22cc960.chunk.js.LICENSE.txt",
-    "static/media/App.css": "/netflixclone/static/media/bg2.d2edb29f.jpg",
-    "static/media/itsOkLogo.png": "/netflixclone/static/media/itsOkLogo.6ceef94f.png",
-    "static/media/its_ok_to_not_be_ok.jpg": "/netflixclone/static/media/its_ok_to_not_be_ok.d4773395.jpg",
-    "static/media/logo.svg": "/netflixclone/static/media/logo.35f3a5ae.svg",
-    "static/media/netflix-logo.png": "/netflixclone/static/media/netflix-logo.faf3e5b9.png",
-    "static/media/netflixCharacter.png": "/netflixclone/static/media/netflixCharacter.7d1475c4.png",
-=======
-    "main.css": "/netflixclone/static/css/main.ce97d03e.chunk.css",
-    "main.js": "/netflixclone/static/js/main.307c663a.chunk.js",
-    "main.js.map": "/netflixclone/static/js/main.307c663a.chunk.js.map",
-    "runtime-main.js": "/netflixclone/static/js/runtime-main.851a363e.js",
-    "runtime-main.js.map": "/netflixclone/static/js/runtime-main.851a363e.js.map",
-    "static/css/2.16b2a26f.chunk.css": "/netflixclone/static/css/2.16b2a26f.chunk.css",
-    "static/js/2.4895f50e.chunk.js": "/netflixclone/static/js/2.4895f50e.chunk.js",
-    "static/js/2.4895f50e.chunk.js.map": "/netflixclone/static/js/2.4895f50e.chunk.js.map",
-    "index.html": "/netflixclone/index.html",
-    "precache-manifest.d57e9c115e548d656e077b9f35ada407.js": "/netflixclone/precache-manifest.d57e9c115e548d656e077b9f35ada407.js",
-    "service-worker.js": "/netflixclone/service-worker.js",
-    "static/css/2.16b2a26f.chunk.css.map": "/netflixclone/static/css/2.16b2a26f.chunk.css.map",
-    "static/css/main.ce97d03e.chunk.css.map": "/netflixclone/static/css/main.ce97d03e.chunk.css.map",
-    "static/js/2.4895f50e.chunk.js.LICENSE.txt": "/netflixclone/static/js/2.4895f50e.chunk.js.LICENSE.txt",
+    "static/css/2.d1d90996.chunk.css.map": "/netflixclone/static/css/2.d1d90996.chunk.css.map",
+    "static/css/main.20f6f9b6.chunk.css.map": "/netflixclone/static/css/main.20f6f9b6.chunk.css.map",
+    "static/js/2.ac938dcc.chunk.js.LICENSE.txt": "/netflixclone/static/js/2.ac938dcc.chunk.js.LICENSE.txt",
     "static/media/arrow.48ae6434.svg": "/netflixclone/static/media/arrow.48ae6434.svg",
     "static/media/bell.060ed2ed.svg": "/netflixclone/static/media/bell.060ed2ed.svg",
     "static/media/App.css": "/netflixclone/static/media/bg2.d2edb29f.jpg",
@@ -42,6 +22,7 @@
     "static/media/caret.3660abd0.svg": "/netflixclone/static/media/caret.3660abd0.svg",
     "static/media/chevron.efbb2bd6.svg": "/netflixclone/static/media/chevron.efbb2bd6.svg",
     "static/media/cog.993f0cc0.svg": "/netflixclone/static/media/cog.993f0cc0.svg",
+    "static/media/device-pile.png": "/netflixclone/static/media/device-pile.0b3d8214.png",
     "static/media/five.jpg": "/netflixclone/static/media/five.7c1ab1fe.jpg",
     "static/media/font-awesome.min.css": "/netflixclone/static/media/fontawesome-webfont.fee66e71.woff",
     "static/media/four.jpg": "/netflixclone/static/media/four.d2b56ed9.jpg",
@@ -50,26 +31,22 @@
     "static/media/logo.svg": "/netflixclone/static/media/logo.35f3a5ae.svg",
     "static/media/messenger.b183a44a.svg": "/netflixclone/static/media/messenger.b183a44a.svg",
     "static/media/netflix-logo.png": "/netflixclone/static/media/netflix-logo.faf3e5b9.png",
+    "static/media/netflix.jpg": "/netflixclone/static/media/netflix.94e79ef2.jpg",
     "static/media/netflixCharacter.png": "/netflixclone/static/media/netflixCharacter.7d1475c4.png",
+    "static/media/netflixprices1.jpg": "/netflixclone/static/media/netflixprices1.4fe059c4.jpg",
     "static/media/one.jpg": "/netflixclone/static/media/one.5c9d559a.jpg",
     "static/media/plus.44917289.svg": "/netflixclone/static/media/plus.44917289.svg",
+    "static/media/readytocast.jpg": "/netflixclone/static/media/readytocast.ad82758c.jpg",
     "static/media/six.jpg": "/netflixclone/static/media/six.a7cfb861.jpg",
     "static/media/three.jpg": "/netflixclone/static/media/three.ff3ca930.jpg",
     "static/media/two.jpg": "/netflixclone/static/media/two.8b49d16f.jpg",
->>>>>>> 49391ffca3ea90904db9fc541b4a3984e4d6cd23
     "static/media/wallpaper.jpg": "/netflixclone/static/media/wallpaper.be7f4968.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.851a363e.js",
-<<<<<<< HEAD
-    "static/js/2.f22cc960.chunk.js",
-    "static/css/main.d9a69ec1.chunk.css",
-    "static/js/main.39644967.chunk.js"
-=======
-    "static/css/2.16b2a26f.chunk.css",
-    "static/js/2.4895f50e.chunk.js",
-    "static/css/main.ce97d03e.chunk.css",
-    "static/js/main.307c663a.chunk.js"
->>>>>>> 49391ffca3ea90904db9fc541b4a3984e4d6cd23
+    "static/css/2.d1d90996.chunk.css",
+    "static/js/2.ac938dcc.chunk.js",
+    "static/css/main.20f6f9b6.chunk.css",
+    "static/js/main.9b0e79b2.chunk.js"
   ]
 }
