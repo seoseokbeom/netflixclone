@@ -18,11 +18,6 @@ const Footer = (props) => (
 				margin: 0 auto 0;
 				padding: 80px 4% 0;
 				color: grey;
-				/* 		
-			background: black;
-			padding: 100px;
-			color: white;
-			margin-top: 60px; */
 			`}
 		>
 			<IconBlock>
@@ -51,6 +46,7 @@ const Footer = (props) => (
 			></ul>
 			<div className="member-footer-service">
 				<button
+					onClick={() => props.serviceClick()}
 					className="service-code"
 					css={css`
 						margin-bottom: 20px;
@@ -58,7 +54,8 @@ const Footer = (props) => (
 						padding: 0.5em;
 					`}
 				>
-					Service Code
+					{props.serviceCode ? props.serviceCode : "Service Code"}
+					{/* Service Code */}
 				</button>
 			</div>
 			<div

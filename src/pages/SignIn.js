@@ -7,6 +7,7 @@ import fire from "../components/authentication/Fire";
 import Icon from "../components/moviePage/Icon";
 import { FaEyeSlash } from "react-icons/fa";
 import { GrFacebook } from "react-icons/gr";
+import { Toaster, Intent } from "@blueprintjs/core";
 import MoviePage from "../pages/Movie";
 import {
 	BrowserRouter as Router,
@@ -16,19 +17,17 @@ import {
 	NavLink,
 } from "react-router-dom";
 
-// const FacebookLogo = styled(A)`
-// 	color: blue;
-// `;
-
 class Header extends Component {
 	constructor(props) {
 		super(props);
 
 		this.state = {
+			authenticated: false,
 			user: null,
 			hidden: true,
 			email: "",
 			password: "",
+			redirect: false,
 		};
 		this.toggleShow = this.toggleShow.bind(this);
 		this.login = this.login.bind(this);
@@ -44,14 +43,37 @@ class Header extends Component {
 		this.setState({ [e.target.name]: e.target.value });
 	}
 
+	setCurrentUser(user) {
+		if (user) {
+			this.setState({
+				user: user,
+				authenticated: true,
+			});
+		} else {
+			this.setState({
+				user: null,
+				authenticated: false,
+			});
+		}
+	}
+
 	login(e) {
 		e.preventDefault();
+		const email = this.emailInput.value;
+		const password = this.passwordInput.value;
 		fire
 			.auth()
 			.signInWithEmailAndPassword(this.state.email, this.state.password)
-			.then((u) => {})
+			.then((user) => {
+				if (user && user.email) {
+					this.loginForm.reset();
+					this.props.setCurrentUser(user);
+					this.setState({ redirect: true });
+				}
+			})
 			.catch((error) => {
 				console.log(error);
+				this.toaster.show({ intent: Intent.DANGER, message: error.message });
 			});
 	}
 
@@ -75,73 +97,79 @@ class Header extends Component {
 				<div className="header-top">
 					<Logo src={logo} />
 				</div>
-				<LoginBody>
-					<LoginContent>
-						<h1>Sign In</h1>
-						{/* <FacebookBox /> */}
-						<div className="textb">
-							<input
-								value={this.state.email}
-								onChange={this.handleChange}
-								type="text"
-								name="email"
-								required
-							/>
-							<div className="placeholder">Email or phone number</div>
-						</div>
-
-						<div className="textb">
-							<input
-								value={this.state.password}
-								onChange={this.handleChange}
-								type={this.state.hidden ? "password" : "text"}
-								name="password"
-								required
-							/>
-							<div className="placeholder">Password</div>
-							<button onClick={this.toggleShow} className="FaEyeSlash">
-								<FaEyeSlash color="white" size="18px" />
-							</button>
-						</div>
-						<button type="submit" onClick={this.login} className="signin-btn">
-							Sign In
-						</button>
-						<div className="remember">
-							<input className="checkbox1" type="checkbox" />
-							<div className="remember2"> Remember me</div>
-
-							<Link to="/signin1">
-								<a className="help" href="#">
-									Need help?
-								</a>
-							</Link>
-						</div>
-
-						<div>
-							<div className="facebook-login">
-								<a href="#">
-									<div className="icon-color">
-										<GrFacebook color="#3b5998" size="20px" />
-									</div>
-								</a>
-								<div className="facebook-login2">Log with Facebook</div>
+				<form>
+					{/* onSubmit={} */}
+					<LoginBody>
+						<LoginContent>
+							<h1>Sign In</h1>
+							{/* <FacebookBox /> */}
+							<div className="textb">
+								<input
+									value={this.state.email}
+									onChange={this.handleChange}
+									type="text"
+									name="email"
+									required
+								/>
+								<div className="placeholder">Email or phone number</div>
 							</div>
-							<div className="newtonetflix">
-								<h2>New to Netflix?</h2>
+
+							<div className="textb">
+								<input
+									value={this.state.password}
+									onChange={this.handleChange}
+									type={this.state.hidden ? "password" : "text"}
+									name="password"
+									required
+								/>
+								<div className="placeholder">Password</div>
+								<button onClick={this.toggleShow} className="FaEyeSlash">
+									<FaEyeSlash color="white" size="18px" />
+								</button>
+							</div>
+							<input
+								type="submit"
+								value="Submit"
+								// onClick={this.login}
+								className="signin-btn"
+							></input>
+							<div className="remember">
+								<input className="checkbox1" type="checkbox" />
+								<div className="remember2"> Remember me</div>
 
 								<Link to="/signin1">
-									<a className="signupnow" href="#">
-										Sign up now
+									<a className="help" href="#">
+										Need help?
 									</a>
 								</Link>
 							</div>
-							<p className="description">
-								This page is protected by Google reCAPTCHA to ensure you're not
-								a bot.
-							</p>
-						</div>
-					</LoginContent>
-				</LoginBody>
+
+							<div>
+								<div className="facebook-login">
+									<a href="#">
+										<div className="icon-color">
+											<GrFacebook color="#3b5998" size="20px" />
+										</div>
+									</a>
+									<div className="facebook-login2">Log with Facebook</div>
+								</div>
+								<div className="newtonetflix">
+									<h2>New to Netflix?</h2>
+
+									<Link to="/signin1">
+										<a className="signupnow" href="#">
+											Sign up now
+										</a>
+									</Link>
+								</div>
+								<p className="description">
+									This page is protected by Google reCAPTCHA to ensure you're
+									not a bot.
+								</p>
+							</div>
+						</LoginContent>
+					</LoginBody>
+				</form>
 
 				<Footer>
 					<div className="container">

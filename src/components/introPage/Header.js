@@ -15,7 +15,18 @@ import {
 } from "react-router-dom";
 
 class Header extends Component {
-	state = {};
+	constructor(props) {
+		super(props);
+		this.state = {
+			serviceCode: "Service Code",
+		};
+		this.serviceClick = this.serviceClick.bind(this);
+	}
+
+	serviceClick = () => {
+		this.setState({ serviceCode: "cTD2eZxfHqwxhMLX" });
+	};
+
 	render() {
 		return (
 			<div>
@@ -35,10 +46,10 @@ class Header extends Component {
 							<h2>Watch anywhere. Cancel at any time.</h2>
 						</HeroCard>
 						<EmailForm>
-							<h3>
+							<StoryCardMssage>
 								Ready to watch? Enter your email to create or restart your
 								membership.
-							</h3>
+							</StoryCardMssage>
 							<EmailLockUp>
 								<SimpleForm>
 									<EmailInput placeholder="Email address" type="text" />
@@ -54,7 +65,30 @@ class Header extends Component {
 				</HeaderComponent>
 				<Tab className="tabcomponent">
 					<TabComponent />
-					<Footer2 color="black" />
+					<div className="email-require">
+						<StoryCard>
+							<StoryCardMssage>
+								Ready to watch? Enter your email to create or restart your
+								membership.
+							</StoryCardMssage>
+							<EmailForm>
+								<EmailLockUp>
+									<SimpleForm>
+										<EmailInput placeholder="Email address" type="text" />
+									</SimpleForm>
+									<Link to="/redirect">
+										<Button>TRY 30 DAYS FREE</Button>
+									</Link>
+									<p>Email is required.</p>
+								</EmailLockUp>
+							</EmailForm>
+						</StoryCard>
+					</div>
+					<Footer2
+						serviceClick={this.serviceClick}
+						serviceCode={this.state.serviceCode}
+						color="black"
+					/>
 				</Tab>
 			</div>
 		);
@@ -62,6 +96,12 @@ class Header extends Component {
 }
 
 export default Header;
+
+const StoryCardMssage = styled.p`
+	max-width: none;
+	padding-bottom: 7px;
+	font-size: 1.2rem;
+`;
 
 const Tab = styled.div`
 	width: 100%;
@@ -80,6 +120,9 @@ const Footer = styled.div`
 `;
 
 const EmailLockUp = styled.div`
+	justify-content: center;
+	align-items: center;
+	margin-left: 50px;
 	p {
 		text-align: left;
 		margin: 0;
@@ -123,7 +166,6 @@ const Button = styled.button`
 	width: 40%;
 	position: relative;
 	text-align: center;
-	/* right: 0px; */
 	color: #fff;
 	border: none;
 	display: flex;
@@ -139,7 +181,7 @@ const StoryCard = styled.div`
 	padding-bottom: 180px;
 	max-width: 950px;
 	margin: 0 auto;
-
+	/* background-color: black; */
 	text-align: center;
 	z-index: 1;
 `;

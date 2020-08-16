@@ -8,19 +8,31 @@ function TabComponentOne() {
 	return (
 		<div>
 			<TabContentContainer>
-				<div className="tab-content">
-					<div className="tab_left">
-						<h1>Enjoy on your TV.</h1>
-						<span>
-							Watch on Smart TVs, Playstation, Xbox, Chromecast, Apple TV,
-							Blu-ray players, and more.
-						</span>
+				<section className="card">
+					<h1 className="story-card-title">Frequently Asked Questions</h1>
+					<div className="box">
+						<div className="box1">
+							What is Netflix?
+							<div className="right_plus">+</div>
+						</div>
+						<div className="box1">
+							How much does Netflix cost?
+							<div className="right_plus">+</div>
+						</div>
+						<div className="box1">
+							Where can I watch?
+							<div className="right_plus">+</div>
+						</div>
+						<div className="box1">
+							How do I cancel?
+							<div className="right_plus">+</div>
+						</div>
+						<div className="box1">
+							What can I watch on Netflix?
+							<div className="right_plus">+</div>
+						</div>
 					</div>
-					<div className="tab_right1">
-						<div className="overlay"></div>
-						<img src={netflixImg} alt="a" />
-					</div>
-				</div>
+				</section>
 			</TabContentContainer>
 			<TabContentContainer>
 				<div className="tab-content">
@@ -62,15 +74,57 @@ const TabContentContainer = styled.div`
 	h1 {
 		font-size: 3.5rem;
 	}
+
+	.right_plus {
+		position: absolute;
+		font-size: 2.5rem;
+		font-weight: bold;
+		text-align: right;
+		align-items: right;
+		justify-content: right;
+		margin-right: 30px;
+		display: inline;
+
+		right: 0;
+	}
+
 	img {
 		z-index: 1;
 		width: 31rem;
 	}
 
-	/* .tab_left {
-	background: red;
-}
- */
+	.card {
+		width: 80%;
+		padding: 7% 0 7%;
+		/* padding-top: 7%; */
+		margin: 0 auto;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+	}
+
+	.story-card-title {
+		justify-content: center;
+		text-align: center;
+		font-weight: bold;
+		margin-bottom: 60px;
+	}
+
+	.box {
+		width: 100%;
+	}
+
+	.box1 {
+		text-align: left;
+		height: 70px;
+		font-size: 26px;
+		background-color: #303030;
+		color: white;
+		padding: 1em 2.2em 0.8em 1.2em;
+		margin-bottom: 9px;
+		font-weight: 400;
+		position: relative;
+	}
 
 	.tab_right1 {
 		position: relative;

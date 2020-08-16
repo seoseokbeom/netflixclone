@@ -4,6 +4,7 @@
 	"version": "0.1.0",
 	"private": true,
 	"dependencies": {
+		"@blueprintjs/core": "^3.31.0",
 		"@emotion/core": "^10.0.28",
 		"@emotion/styled": "^10.0.27",
 		"@fortawesome/fontawesome-svg-core": "^1.2.29",
@@ -31,7 +32,7 @@
 		"react-materialize": "^3.9.2",
 		"react-router": "^5.2.0",
 		"react-router-dom": "^5.2.0",
-		"react-scripts": "^3.4.1",
+		"react-scripts": "^3.4.3",
 		"react-tabs": "^3.1.1",
 		"semantic-ui-css": "^2.4.1",
 		"semantic-ui-react": "^1.1.1",

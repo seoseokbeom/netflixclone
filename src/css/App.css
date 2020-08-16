@@ -36,6 +36,9 @@ a {
 	z-index: 5;
 }
 
+.email-require {
+	background-color: black;
+}
 .overlay {
 	position: absolute;
 	z-index: 0;
