@@ -36,10 +36,12 @@ class Header extends Component {
 		this.toggleShow = this.toggleShow.bind(this);
 		this.login = this.login.bind(this);
 		this.handleChange = this.handleChange.bind(this);
+		this.setCurrentUser = this.setCurrentUser.bind(this);
 		this.signup = this.signup.bind(this);
 	}
 
-	toggleShow() {
+	toggleShow(e) {
+		e.preventDefault();
 		this.setState({ hidden: !this.state.hidden });
 	}
 
@@ -70,6 +72,7 @@ class Header extends Component {
 
 	login(e) {
 		e.preventDefault();
+		console.log(e.target);
 		const email = this.emailInput.value;
 		const password = this.passwordInput.value;
 		console.log(email, password);
@@ -78,21 +81,13 @@ class Header extends Component {
 			.signInWithEmailAndPassword(email, password)
 			.then((user) => {
 				this.setCurrentUser(user);
-				// console.log(user, user.email);
-				this.loginForm.reset();
+				toast.error("Login Succeded.");
+				// this.loginForm.reset();
 				this.setState({ redirect: true });
-				// console.log(user, user.email);
-				// if (user && user.email) {
-				// }
-				console.log("kkkkkkkk", this.state.user);
-
-				// <Link to="/movie"></Link>;
 			})
 			.catch((error) => {
-				console.log("sssssssss", error);
 				// alert(error.message);
 				toast.error(error.message);
-
 				// this.toaster.show({ message: "error.message" });
 			});
 	}
@@ -106,7 +101,7 @@ class Header extends Component {
 				console.log(u);
 			})
 			.catch((error) => {
-				this.toaster.show({ intent: Intent.DANGER, message: error.message });
+				// this.toaster.show({ intent: Intent.DANGER, message: error.message });
 				console.log(error);
 			});
 	}
@@ -122,14 +117,13 @@ class Header extends Component {
 					<Logo src={logo} />
 				</div>
 				<form
-					onSubmit={(e) => {
-						this.login(e);
-					}}
-					ref={(form) => {
-						this.loginForm = form;
-					}}
+				// onSubmit={(e) => {
+				// 	this.login(e);
+				// }}
+				// ref={(form) => {
+				// 	this.loginForm = form;
+				// }}
 				>
-					{/* onSubmit={} */}
 					<LoginBody>
 						<LoginContent>
 							<h1>Sign In</h1>
@@ -138,15 +132,12 @@ class Header extends Component {
 									this.toaster = element;
 								}}
 							/>
-							{/* <FacebookBox /> */}
-
 							<div className="textb">
 								<input
 									value={this.state.email}
 									ref={(input) => {
 										this.emailInput = input;
 									}}
-									// placeholder="Email"
 									onChange={this.handleChange}
 									type="email"
 									name="email"
@@ -161,18 +152,26 @@ class Header extends Component {
 									ref={(input) => {
 										this.passwordInput = input;
 									}}
-									// placeholder="Password"
 									onChange={this.handleChange}
 									type={this.state.hidden ? "password" : "text"}
 									name="password"
 									required
 								/>
 								<div className="placeholder">Password</div>
-								<button onClick={this.toggleShow} className="FaEyeSlash">
+								<button
+									onClick={(e) => this.toggleShow(e)}
+									className="FaEyeSlash"
+								>
 									<FaEyeSlash color="white" size="18px" />
 								</button>
 							</div>
 							<input
+								onClick={(e) => {
+									this.login(e);
+								}}
+								ref={(form) => {
+									this.loginForm = form;
+								}}
 								type="submit"
 								value="Submit"
 								// onClick={this.login}
@@ -270,7 +269,6 @@ const Footer = styled.div`
 		a {
 			flex-basis: auto;
 			width: 200px;
-			/* text-align: left; */
 			margin: 0 0 25px;
 			padding: 0 12px 0 0;
 			color: #757575;

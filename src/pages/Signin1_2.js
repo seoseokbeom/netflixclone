@@ -4,10 +4,15 @@ import logo from "../images/svg/logo.svg";
 import styled from "styled-components";
 // import "../";
 import "../css/App.css";
+import { Toaster, Intent } from "@blueprintjs/core";
+import fire from "../components/authentication/Fire";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import Icon from "../components/moviePage/Icon";
 import { FaEyeSlash } from "react-icons/fa";
 import { GrFacebook } from "react-icons/gr";
-import MoviePage from "./Movie";
+import Movie from "./Movie";
+import ManageProfile from "../pages/ManageProfile";
 import {
 	BrowserRouter as Router,
 	Switch,
@@ -16,9 +21,98 @@ import {
 	NavLink,
 } from "react-router-dom";
 import "./Signin.css";
+toast.configure();
 
 class Signin1_2 extends Component {
+	constructor(props) {
+		super(props);
+
+		this.state = {
+			authenticated: false,
+			user: null,
+			hidden: true,
+			email: "",
+			password: "",
+			redirect: false,
+		};
+		this.signup = this.signup.bind(this);
+		this.setCurrentUser = this.setCurrentUser.bind(this);
+	}
+
+	setCurrentUser(user) {
+		if (user) {
+			this.setState(
+				{
+					user: user,
+					authenticated: true,
+				},
+				console.log(this.state.user, this.state.authenticated)
+			);
+		} else {
+			this.setState(
+				{
+					user: null,
+					authenticated: false,
+				},
+
+				console.log(this.state.user, this.state.authenticated)
+			);
+		}
+	}
+
+	login(e) {
+		e.preventDefault();
+		const email = this.emailInput.value;
+		const password = this.passwordInput.value;
+		console.log(email, password);
+		fire
+			.auth()
+			.signInWithEmailAndPassword(email, password)
+			.then((user) => {
+				this.setCurrentUser(user);
+				// this.loginForm.reset();
+				this.setState({ authenticated: true, redirect: true });
+				// this.setState({  });
+			})
+			.catch((error) => {
+				console.log("sssssssss", error);
+				// alert(error.message);
+				toast.error(error.message);
+
+				// this.toaster.show({ message: "error.message" });
+			});
+	}
+
+	signup(e) {
+		e.preventDefault();
+		const email = this.emailInput.value;
+		const password = this.passwordInput.value;
+		console.log(email, password);
+		fire
+			.auth()
+			.createUserWithEmailAndPassword(email, password)
+			.then((u) => {
+				this.setCurrentUser(u);
+				// this.loginForm.reset();
+				this.setState({ authenticated: true });
+				toast.error("Thanks! Your account has been successfully created.");
+				console.log("kkkkkkkk");
+				console.log(u);
+			})
+			.catch((error) => {
+				toast.error(error.message);
+
+				// this.toaster.show({ intent: Intent.DANGER, message: error.message });
+				console.log(error);
+			});
+	}
+
 	render() {
+		if (this.state.authenticated) {
+			console.log("-------------------");
+			return <ManageProfile />;
+		}
+		console.log("222222222222222222222");
 		return (
 			// <HeaderComponent className="header-container">
 			<div className="entire">
@@ -34,20 +128,51 @@ class Signin1_2 extends Component {
 				</AAA>
 				<SimpleContainer></SimpleContainer>
 				<Content>
-					<div className="contentContainer">
+					<form
+						onSubmit={(e) => {
+							this.signup(e);
+						}}
+						ref={(form) => {
+							this.loginForm = form;
+						}}
+						className="contentContainer"
+					>
 						<div className="logoContainer">
 							<p>Step 1 of 3</p>
 							<h1>Create a password to start your membership.</h1>
 							<p>
 								Just a few more steps and you're done! We hate paperwork, too.
 							</p>
+
 							<div className="textb">
-								<input type="text" required />
-								<div className="placeholder">Email or phone number</div>
+								<input
+									// value={this.state.email}
+									ref={(input) => {
+										this.emailInput = input;
+									}}
+									onChange={this.handleChange}
+									type="email"
+									name="email"
+									required
+								/>
+								{/* <input type="text" required /> */}
+								<div className="placeholder">Email</div>
 							</div>
 
 							<div className="textb">
-								<input type="password" required />
+								<input
+									// value={this.state.password}
+									ref={(input) => {
+										this.passwordInput = input;
+									}}
+									// placeholder="Password"
+									onChange={this.handleChange}
+									type={this.state.hidden ? "password" : "text"}
+									name="password"
+									required
+								/>
+
+								{/* <input type="password" required /> */}
 								<div className="placeholder">Add a password</div>
 							</div>
 							<div className="remember">
@@ -56,11 +181,18 @@ class Signin1_2 extends Component {
 									Yes, please email me Netflix special offers.
 								</div>
 							</div>
-							<Link to="/manage">
+
+							<input
+								type="submit"
+								value="Continue"
+								// onClick={this.login}
+								className="signup-btn"
+							></input>
+							{/* <Link to="/manage">
 								<Button>Continue</Button>
-							</Link>
+							</Link> */}
 						</div>
-					</div>
+					</form>
 				</Content>
 				<SiteFooter>
 					<div className="footer-inside">
@@ -122,25 +254,39 @@ class Signin1_2 extends Component {
 }
 
 export default Signin1_2;
-const Button = styled.button`
-	width: 100%;
-	height: 48px;
-	background-color: #e50914;
-	padding: 12px 25px;
-	color: white;
-	text-transform: uppercase;
-	min-height: 48px;
-	font-weight: 400;
-	/* margin-top: 17px; */
-	font-size: 17px;
-	border: none;
-`;
+// const Button = styled.button`
+// 	width: 100%;
+// 	height: 48px;
+// 	background-color: #e50914;
+// 	padding: 12px 25px;
+// 	color: white;
+// 	text-transform: uppercase;
+// 	min-height: 48px;
+// 	font-weight: 400;
+// 	/* margin-top: 17px; */
+// 	font-size: 17px;
+// 	border: none;
+// `;
 
 const Content = styled.div`
 	height: 487px;
 	background-color: white;
 	padding: 20px 32px 60px;
 	margin: 0 95px 130px;
+
+	.signup-btn {
+		width: 100%;
+		height: 48px;
+		background-color: #e50914;
+		padding: 12px 25px;
+		color: white;
+		text-transform: uppercase;
+		min-height: 48px;
+		font-weight: 400;
+		/* margin-top: 17px; */
+		font-size: 17px;
+		border: none;
+	}
 
 	.logoContainer {
 		color: black;

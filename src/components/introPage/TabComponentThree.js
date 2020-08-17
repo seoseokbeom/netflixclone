@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import "../../css/TabsNav.css";
 import netflixImg from "../../images/svg/netflix.jpg";
-import readytocast from "../../images/svg/readytocast.jpg";
+import netflix4 from "../../images/svg/netflix4.jpg";
 import devicePile from "../../images/svg/device-pile.png";
 import NetflixPrices from "../../images/svg/netflixprices1.jpg";
 import "../../css/TabThree.css";
@@ -35,7 +35,7 @@ function TabComponentOne() {
 			<TabContentContainer>
 				<div className="tab-content">
 					<div className="tab_left">
-						<img src={readytocast} alt="a" />
+						<img src={netflix4} alt="a" />
 					</div>
 					<div className="tab_right">
 						<h1>Download your shows to watch offline.</h1>
