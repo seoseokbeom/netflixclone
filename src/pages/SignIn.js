@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import logo from "../images/svg/logo.svg";
-// import {  } from "react-router-dom";
 import styled from "styled-components";
 import "../css/App.css";
 import fire from "../components/authentication/Fire";
@@ -82,13 +81,10 @@ class Header extends Component {
 			.then((user) => {
 				this.setCurrentUser(user);
 				toast.error("Login Succeded.");
-				// this.loginForm.reset();
 				this.setState({ redirect: true });
 			})
 			.catch((error) => {
-				// alert(error.message);
 				toast.error(error.message);
-				// this.toaster.show({ message: "error.message" });
 			});
 	}
 
@@ -101,7 +97,6 @@ class Header extends Component {
 				console.log(u);
 			})
 			.catch((error) => {
-				// this.toaster.show({ intent: Intent.DANGER, message: error.message });
 				console.log(error);
 			});
 	}
@@ -116,14 +111,7 @@ class Header extends Component {
 				<div className="header-top">
 					<Logo src={logo} />
 				</div>
-				<form
-				// onSubmit={(e) => {
-				// 	this.login(e);
-				// }}
-				// ref={(form) => {
-				// 	this.loginForm = form;
-				// }}
-				>
+				<form>
 					<LoginBody>
 						<LoginContent>
 							<h1>Sign In</h1>
@@ -174,7 +162,6 @@ class Header extends Component {
 								}}
 								type="submit"
 								value="Submit"
-								// onClick={this.login}
 								className="signin-btn"
 							></input>
 							<div className="remember">

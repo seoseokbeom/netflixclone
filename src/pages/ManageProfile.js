@@ -20,11 +20,6 @@ class ManageProfile extends Component {
 				<div className="overlay"></div>
 				<div className="overlay"></div>
 
-				{/* <AAA>
-					<div className="header">
-						<Logo src={logo} />
-					</div>
-				</AAA> */}
 				<StoryCard>
 					<div className="comment">Who's watching?</div>
 					<ul className="choose-profile">
@@ -32,16 +27,13 @@ class ManageProfile extends Component {
 							<Link to="/movie">
 								<li className="profile">
 									<div className="avatar-wrapper">
-										{/* C:\Users\kakun\Desktop\netflixclone\src\images\playMovie\netflixCharacter.png */}
 										<img src={Character} alt="Character" />
-										{/* <img src="../images/playMovie/netflixCharacter.png" alt="" /> */}
 									</div>
 									<span className="profile-name">A</span>
 								</li>
 							</Link>
 						</div>
 						<div className="margin">
-							{/* <a href="/movie"></a> */}
 							<Link to="/movie">
 								<li className="profile">
 									<div className="avatar-wrapper">
@@ -50,7 +42,7 @@ class ManageProfile extends Component {
 											alt=""
 										/>
 									</div>
-									<span className="profile-name">A</span>
+									<span className="profile-name">B</span>
 								</li>
 							</Link>
 						</div>
@@ -63,7 +55,7 @@ class ManageProfile extends Component {
 											alt=""
 										/>
 									</div>
-									<span className="profile-name">A</span>
+									<span className="profile-name">C</span>
 								</li>
 							</Link>
 						</div>
@@ -76,7 +68,7 @@ class ManageProfile extends Component {
 											alt=""
 										/>
 									</div>
-									<span className="profile-name">A</span>
+									<span className="profile-name">D</span>
 								</li>
 							</Link>
 						</div>

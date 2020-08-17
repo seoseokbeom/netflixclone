@@ -15,11 +15,14 @@ class MoviePage extends Component {
 		this.state = {
 			user: true,
 		};
+		this.serviceClick = this.serviceClick.bind(this);
 	}
+	serviceClick = () => {
+		this.setState({ serviceCode: "cTD2eZxfHqwxhMLX" });
+	};
 	render() {
 		return (
 			<div>
-				{/* <Header /> */}
 				<Global styles={GlobalCSS} />
 				<Navbar />
 				<TitleMovie />
@@ -35,8 +38,10 @@ class MoviePage extends Component {
 				<Row title="Comedy Movies" fetchUrl={requests.fetchComedyMovies} />
 				<Row title="Horror Movies" fetchUrl={requests.fetchHorrorMovies} />
 				<Row title="Romance Movies" fetchUrl={requests.fetchRomanceMovies} />
-				{/* <Row title="Documentaries" fetchUrl={requests.fetchDocumnetaries} /> */}
-				<Footer />
+				<Footer
+					serviceClick={this.serviceClick}
+					serviceCode={this.state.serviceCode}
+				/>
 			</div>
 		);
 	}

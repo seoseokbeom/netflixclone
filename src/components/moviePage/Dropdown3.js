@@ -67,7 +67,6 @@ function DropdownMenu() {
 	function DropdownItem(props) {
 		return (
 			<a href="#" className="menu-item">
-				{/* <span className="icon-button">{props.leftIcon}</span> */}
 				{props.children}
 				<span className="icon-right">{props.rightIcon}</span>
 			</a>
@@ -87,7 +86,6 @@ function DropdownMenu() {
 	}
 
 	return (
-		//style={{ height: menuHeight }}
 		<div className="dropdown" ref={dropdownRef}>
 			<CSSTransition
 				in={activeMenu === "main"}
@@ -99,21 +97,12 @@ function DropdownMenu() {
 				<div className="menu">
 					<DropdownItem>Account</DropdownItem>
 					<Link to="/manage">
-						<DropdownItem
-							leftIcon={<CogIcon />}
-							// rightIcon={<ChevronIcon />}
-							goToMenu="settings"
-						>
+						<DropdownItem leftIcon={<CogIcon />} goToMenu="settings">
 							Profile
 						</DropdownItem>
 					</Link>
-					<Link to="/signin">
-						<DropdownItem
-							leftIcon="🦧"
-							// rightIcon={<ChevronIcon />}
-							goToMenu="animals"
-							onClick={logout}
-						>
+					<Link to="/netflixclone">
+						<DropdownItem leftIcon="🦧" goToMenu="animals" onClick={logout}>
 							Sign out of netflix
 						</DropdownItem>
 					</Link>
@@ -125,7 +114,6 @@ function DropdownMenu() {
 				timeout={500}
 				classNames="menu-secondary"
 				unmountOnExit
-				// onEnter={calcHeight}
 			>
 				<div className="menu">
 					<DropdownItem goToMenu="main" leftIcon={<ArrowIcon />}>
@@ -143,7 +131,6 @@ function DropdownMenu() {
 				timeout={500}
 				classNames="menu-secondary"
 				unmountOnExit
-				// onEnter={calcHeight}
 			>
 				<div className="menu">
 					<DropdownItem goToMenu="main" leftIcon={<ArrowIcon />}>

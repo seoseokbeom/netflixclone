@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import logo from "../images/svg/logo.svg";
-// import {  } from "react-router-dom";
 import styled from "styled-components";
-// import "../";
 import "../css/App.css";
 import { Toaster, Intent } from "@blueprintjs/core";
 import fire from "../components/authentication/Fire";
@@ -70,16 +68,11 @@ class Signin1_2 extends Component {
 			.signInWithEmailAndPassword(email, password)
 			.then((user) => {
 				this.setCurrentUser(user);
-				// this.loginForm.reset();
 				this.setState({ authenticated: true, redirect: true });
-				// this.setState({  });
 			})
 			.catch((error) => {
 				console.log("sssssssss", error);
-				// alert(error.message);
 				toast.error(error.message);
-
-				// this.toaster.show({ message: "error.message" });
 			});
 	}
 
@@ -93,7 +86,6 @@ class Signin1_2 extends Component {
 			.createUserWithEmailAndPassword(email, password)
 			.then((u) => {
 				this.setCurrentUser(u);
-				// this.loginForm.reset();
 				this.setState({ authenticated: true });
 				toast.error("Thanks! Your account has been successfully created.");
 				console.log("kkkkkkkk");
@@ -101,8 +93,6 @@ class Signin1_2 extends Component {
 			})
 			.catch((error) => {
 				toast.error(error.message);
-
-				// this.toaster.show({ intent: Intent.DANGER, message: error.message });
 				console.log(error);
 			});
 	}
@@ -114,7 +104,6 @@ class Signin1_2 extends Component {
 		}
 		console.log("222222222222222222222");
 		return (
-			// <HeaderComponent className="header-container">
 			<div className="entire">
 				<AAA>
 					<div className="header">
@@ -146,7 +135,6 @@ class Signin1_2 extends Component {
 
 							<div className="textb">
 								<input
-									// value={this.state.email}
 									ref={(input) => {
 										this.emailInput = input;
 									}}
@@ -155,24 +143,20 @@ class Signin1_2 extends Component {
 									name="email"
 									required
 								/>
-								{/* <input type="text" required /> */}
 								<div className="placeholder">Email</div>
 							</div>
 
 							<div className="textb">
 								<input
-									// value={this.state.password}
 									ref={(input) => {
 										this.passwordInput = input;
 									}}
-									// placeholder="Password"
 									onChange={this.handleChange}
 									type={this.state.hidden ? "password" : "text"}
 									name="password"
 									required
 								/>
 
-								{/* <input type="password" required /> */}
 								<div className="placeholder">Add a password</div>
 							</div>
 							<div className="remember">
@@ -185,12 +169,8 @@ class Signin1_2 extends Component {
 							<input
 								type="submit"
 								value="Continue"
-								// onClick={this.login}
 								className="signup-btn"
 							></input>
-							{/* <Link to="/manage">
-								<Button>Continue</Button>
-							</Link> */}
 						</div>
 					</form>
 				</Content>
@@ -254,19 +234,6 @@ class Signin1_2 extends Component {
 }
 
 export default Signin1_2;
-// const Button = styled.button`
-// 	width: 100%;
-// 	height: 48px;
-// 	background-color: #e50914;
-// 	padding: 12px 25px;
-// 	color: white;
-// 	text-transform: uppercase;
-// 	min-height: 48px;
-// 	font-weight: 400;
-// 	/* margin-top: 17px; */
-// 	font-size: 17px;
-// 	border: none;
-// `;
 
 const Content = styled.div`
 	height: 487px;
@@ -283,7 +250,6 @@ const Content = styled.div`
 		text-transform: uppercase;
 		min-height: 48px;
 		font-weight: 400;
-		/* margin-top: 17px; */
 		font-size: 17px;
 		border: none;
 	}
@@ -317,9 +283,6 @@ const Content = styled.div`
 	.textb input {
 		width: 100%;
 		height: 54px;
-		/* border: none; */
-		/* border-radius: 6px; */
-		/* background-color: #333; */
 		font-size: 16px;
 		font-weight: 500;
 		color: black;

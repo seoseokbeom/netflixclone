@@ -7,7 +7,6 @@ import three from "../../images/playMovie/three.jpg";
 import four from "../../images/playMovie/four.jpg";
 import five from "../../images/playMovie/five.jpg";
 import six from "../../images/playMovie/six.jpg";
-// https://github.com/seoseokbeom/netflixclone.git
 const content = [one, two, three, four, five, six];
 
 const ContentRow = () => {
@@ -15,13 +14,7 @@ const ContentRow = () => {
 		<div
 			className="ContentRow"
 			css={css`
-				/* margin-top: -100px; for exact positioning */
-				/* position: absolute; */
-				/* position: relative; */
 				position: relative;
-				/* width: 100%;
-				 */
-				/* height: 400px; */
 				overflow-x: scroll;
 				::-webkit-scrollbar {
 					display: none;
@@ -29,7 +22,6 @@ const ContentRow = () => {
 				z-index: 2;
 				padding: 30px;
 				margin-top: -200px;
-				/* padding-bottom: 50px; */
 				overflow: auto;
 			`}
 		>

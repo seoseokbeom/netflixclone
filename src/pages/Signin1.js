@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import logo from "../images/svg/logo.svg";
-// import {  } from "react-router-dom";
 import styled from "styled-components";
-// import "../";
 import "../css/App.css";
 import Icon from "../components/moviePage/Icon";
 import { FaEyeSlash } from "react-icons/fa";
@@ -20,7 +18,6 @@ import "./Signin.css";
 export class Signin1 extends Component {
 	render() {
 		return (
-			// <HeaderComponent className="header-container">
 			<div className="entire">
 				<AAA>
 					<div className="header">
@@ -136,16 +133,11 @@ const Content = styled.div`
 	margin: 0 95px 15px;
 
 	.logoContainer {
-		/* width: 260px; */
-		/* width: 100%; */
 		color: black;
 		text-align: center;
 		margin: 100px 0 20px;
 		display: block;
 		height: 200px;
-		/* url(https://assets.nflxext.com/ffe/siteui/acquisition/simplicity/Devices.png) no-repeat 50% 50% */
-		/* background: url(https://assets.nflxext.com/ffe/siteui/acquisition/simplicity/Devices.png)
-			no-repeat 50% 50%; */
 		.imgContainer {
 			margin: 100px 0 20px;
 		}
@@ -171,8 +163,6 @@ const Content = styled.div`
 const SiteFooter = styled.div`
 	padding: 30px 0 30px;
 	height: 400px;
-	/* padding: 0 auto; */
-	/* padding: 30px auto 0; */
 	width: 100%;
 	font-size: 1em;
 	background-color: #f3f3f3;
@@ -190,7 +180,6 @@ const SiteFooter = styled.div`
 		a {
 			flex-basis: auto;
 			width: 200px;
-			/* text-align: left; */
 			margin: 0 0 25px;
 			padding: 0 12px 0 0;
 			color: #757575;
@@ -222,16 +211,13 @@ const AAA = styled.div`
 		width: 100%;
 		height: 100px;
 		display: block;
-		/* background-color: white; */
 		border-bottom: solid rgb(230, 230, 230) 1px;
 	}
 
 	.Signin {
 		position: absolute;
-		/* top: 50%; */
 		font-weight: 700;
 		font-size: 19px;
-		/* line-height: 90px; */
 		width: 75px;
 		height: 90px;
 		margin: 0 38px;
