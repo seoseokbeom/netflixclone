@@ -61,7 +61,7 @@ const Navbar = () => {
 			{/* <FaSearch /> */}
 			<ul>
 				<li>
-					<Link to="/movie">
+					<Link to="/netflixclone">
 						<img height="75" src={netflixLogo} />
 					</Link>
 				</li>
