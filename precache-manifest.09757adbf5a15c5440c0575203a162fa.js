@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "f55e13503f29ad34c70d385e2dfbcd49",
+    "revision": "d11a8c7f53555b81f3216bad584ace47",
     "url": "/netflixclone/index.html"
   },
   {
@@ -8,8 +8,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/netflixclone/static/css/2.d1d90996.chunk.css"
   },
   {
-    "revision": "6598f3cc635185a0de14",
-    "url": "/netflixclone/static/css/main.661cd16a.chunk.css"
+    "revision": "bb2c66055ab1655d34d7",
+    "url": "/netflixclone/static/css/main.bc949428.chunk.css"
   },
   {
     "revision": "8bde7305bd48850ee289",
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/netflixclone/static/js/2.4bb04362.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "6598f3cc635185a0de14",
-    "url": "/netflixclone/static/js/main.dbcdd635.chunk.js"
+    "revision": "bb2c66055ab1655d34d7",
+    "url": "/netflixclone/static/js/main.55825721.chunk.js"
   },
   {
     "revision": "4453412ccf1abf7c876b",
