@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import "../../css/TabsNav.css";
-import netflixImg from "../../images/svg/netflix.jpg";
+import netflixImg from "../../images/svg/netflix0.png";
 import readytocast from "../../images/svg/readytocast.jpg";
 import devicePile from "../../images/svg/device-pile.png";
 function TabComponentOne() {

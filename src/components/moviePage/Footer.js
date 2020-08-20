@@ -13,10 +13,10 @@ const Footer = (props) => (
 	>
 		<footer
 			css={css`
-				height: 340px;
+				/* height: 340px; */
 				max-width: 980px;
 				margin: 0 auto 0;
-				padding: 80px 4% 0;
+				padding: 80px 4% 30px;
 				color: grey;
 			`}
 		>

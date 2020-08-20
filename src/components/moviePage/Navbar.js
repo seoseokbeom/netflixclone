@@ -51,14 +51,10 @@ const Navbar = () => {
 								rgba(0, 0, 0, 0.7) 10%,
 								rgba(0, 0, 0, 0)
 							);
-							/* z-index: 1; */
 					  `
-					: css`
-							/* background: transparent; */
-					  `,
+					: css``,
 			]}
 		>
-			{/* <FaSearch /> */}
 			<ul>
 				<li>
 					<Link to="/movie">
@@ -67,7 +63,7 @@ const Navbar = () => {
 				</li>
 
 				{leftLinks.map((link) => (
-					<li key={link}>
+					<li className="nav-list" key={link}>
 						<Link to="/movie">{link}</Link>
 					</li>
 				))}
@@ -90,8 +86,6 @@ const Navbar = () => {
 				</li> */}
 				<li>
 					<Link to="/movie">
-						{/* <i className="fa fa-search" aria-hidden="true"></i> */}
-
 						<FaSearch size={20} />
 					</Link>
 				</li>
@@ -105,34 +99,13 @@ const Navbar = () => {
 						<BsFillBellFill size={24} />
 					</Link>
 				</li>
-				{/* <li className="dropdown3"> */}
 				<Dropdown3 />
-				{/* </li> */}
-				{/* <li style={{ verticalAlign: "baseline" }}>
-					<Link to="/movie">
-						<img src={Character} alt="Character" style={{ maxWidth: 30 }} />
-						<GoTriangleDown height="30" className="svg" size={14} />
-					</Link>
-				</li> */}
-				{/* BsFillBellFill   */}
 			</ul>
 		</nav>
 	);
 };
 
 const NavbarCSS = css`
-	/* background: #000; */
-	/* z-index: 100;
-	background: #fff; */
-	/* background: linear-gradient(
-		180deg,
-		rgba(0, 0, 0, 1) 0%,
-		rgba(255, 255, 255, 1) 75%
-	); */
-	/* background: transparent; */
-	${"" /* .dropdown3 {
-	} */}
-
 	background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), transparent),
 		url("images/background.jpg");
 
@@ -162,7 +135,6 @@ const NavbarCSS = css`
 
 	li:last-child {
 		margin-right: 10px;
-		${"" /* background: #ff0000; */}
 	}
 
 	a {
@@ -180,6 +152,23 @@ const NavbarCSS = css`
 	ul.right {
 		i {
 			font-size: 22px;
+		}
+	}
+
+	@media only screen and (max-width: 828px) {
+		.nav-list {
+			display: none;
+		}
+		ul.right {
+			${"" /* margin-right: 20px; */}
+		}
+	}
+	@media only screen and (max-width: 400px) {
+		li {
+			margin-right: 8px;
+		}
+		li:last-child {
+			margin-right: 0px;
 		}
 	}
 `;

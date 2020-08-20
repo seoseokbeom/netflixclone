@@ -1,17 +1,17 @@
 import "./index.css";
-import { ReactComponent as BellIcon } from "./icons/bell.svg";
-import { ReactComponent as MessengerIcon } from "./icons/messenger.svg";
+// import { ReactComponent as BellIcon } from "./icons/bell.svg";
+// import { ReactComponent as MessengerIcon } from "./icons/messenger.svg";
+// import { DivideOutline } from "styled-icons/typicons";
+// import { ReactComponent as ChevronIcon } from "./icons/chevron.svg";
+// import { ReactComponent as PlusIcon } from "./icons/plus.svg";
 import { ReactComponent as CaretIcon } from "./icons/caret.svg";
-import { ReactComponent as PlusIcon } from "./icons/plus.svg";
 import { ReactComponent as CogIcon } from "./icons/cog.svg";
-import { ReactComponent as ChevronIcon } from "./icons/chevron.svg";
 import { ReactComponent as ArrowIcon } from "./icons/arrow.svg";
 import { ReactComponent as BoltIcon } from "./icons/bolt.svg";
 import ProfileImg from "../../images/playMovie/netflixCharacter.png";
 import React, { useState, useEffect, useRef } from "react";
 import { CSSTransition } from "react-transition-group";
 import SignIn from "../../pages/SignIn";
-import { DivideOutline } from "styled-icons/typicons";
 import fire from "../authentication/Fire";
 import {
 	BrowserRouter as Router,
@@ -41,6 +41,7 @@ function NavItem(props) {
 	return (
 		<li
 			className="nav-item"
+			onClick={() => setOpen(!open)}
 			onMouseEnter={() => setOpen(true)}
 			onMouseLeave={() => setOpen(false)}
 		>
@@ -73,17 +74,17 @@ function DropdownMenu() {
 		);
 	}
 
-	function logout() {
-		return fire
-			.auth()
-			.signOut()
-			.then(function () {
-				// Sign-out successful.
-			})
-			.catch(function (error) {
-				// An error happened.
-			});
-	}
+	// function logout() {
+	// 	return fire
+	// 		.auth()
+	// 		.signOut()
+	// 		.then(function () {
+	// 			// Sign-out successful.
+	// 		})
+	// 		.catch(function (error) {
+	// 			// An error happened.
+	// 		});
+	// }
 
 	return (
 		<div className="dropdown" ref={dropdownRef}>

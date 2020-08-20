@@ -1,35 +1,102 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import "../../css/TabsNav.css";
 import netflixImg from "../../images/svg/netflix.jpg";
 import netflix2 from "../../images/svg/netflix2.jpg";
 import netflix3 from "../../images/svg/netflix3.jpg";
 function TabComponentOne() {
+	const [active, setActive] = useState("");
+
+	function handleExpandCollaps(name) {
+		if (active === name) {
+			//If collapsiable is already visible and clicked on same then this will hide it
+			setActive("");
+		} else {
+			//To show collapsiable
+			setActive(name);
+		}
+	}
+
 	return (
 		<div>
 			<TabContentContainer>
 				<section className="card">
 					<h1 className="story-card-title">Frequently Asked Questions</h1>
 					<div className="box">
-						<div className="box1">
+						<div className="box1" onClick={() => handleExpandCollaps("idx1")}>
 							What is Netflix?
 							<div className="right_plus">+</div>
 						</div>
-						<div className="box1">
+						<div
+							className={`subbox transform ${
+								active === "idx1" ? "" : "active"
+							}`}
+						>
+							Netflix is a streaming service that offers a wide variety of
+							award-winning TV shows, movies, anime, documentaries, and more on
+							thousands of internet-connected devices. You can watch as much as
+							you want, whenever you want without a single commercial – all for
+							one low monthly price. There's always something new to discover
+							and new TV shows and movies are added every week!
+						</div>
+						<div className="box1" onClick={() => handleExpandCollaps("idx2")}>
 							How much does Netflix cost?
 							<div className="right_plus">+</div>
 						</div>
-						<div className="box1">
+						<div
+							className={`subbox transform ${
+								active === "idx2" ? "" : "active"
+							}`}
+						>
+							Watch Netflix on your smartphone, tablet, Smart TV, laptop, or
+							streaming device, all for one fixed monthly fee. Plans range from
+							KRW9,500 to KRW14,500 a month. No extra costs, no contracts.
+						</div>
+						<div className="box1" onClick={() => handleExpandCollaps("idx3")}>
 							Where can I watch?
 							<div className="right_plus">+</div>
 						</div>
-						<div className="box1">
+						<div
+							className={`subbox transform ${
+								active === "idx3" ? "" : "active"
+							}`}
+						>
+							Watch anywhere, anytime, on an unlimited number of devices. Sign
+							in with your Netflix account to watch instantly on the web at
+							netflix.com from your personal computer or on any
+							internet-connected device that offers the Netflix app, including
+							smart TVs, smartphones, tablets, streaming media players and game
+							consoles. You can also download your favorite shows with the iOS,
+							Android, or Windows 10 app. Use downloads to watch while you're on
+							the go and without an internet connection. Take Netflix with you
+							anywhere.
+						</div>
+						<div className="box1" onClick={() => handleExpandCollaps("idx4")}>
 							How do I cancel?
 							<div className="right_plus">+</div>
 						</div>
-						<div className="box1">
+						<div
+							className={`subbox transform ${
+								active === "idx4" ? "" : "active"
+							}`}
+						>
+							Netflix is flexible. There are no pesky contracts and no
+							commitments. You can easily cancel your account online in two
+							clicks. There are no cancellation fees – start or stop your
+							account anytime.
+						</div>
+						<div className="box1" onClick={() => handleExpandCollaps("idx5")}>
 							What can I watch on Netflix?
 							<div className="right_plus">+</div>
+						</div>
+						<div
+							className={`subbox transform ${
+								active === "idx5" ? "" : "active"
+							}`}
+						>
+							Netflix has an extensive library of feature films, documentaries,
+							TV shows, anime, award-winning Netflix originals, and more. Watch
+							as much as you want, anytime you want.
 						</div>
 					</div>
 				</section>
@@ -67,6 +134,19 @@ function TabComponentOne() {
 }
 
 export default TabComponentOne;
+
+// const boxStyle = {
+// 	text-align: left;
+// 	height: calc(23px + 3vw);
+// 	/* font-size: 26px; */
+// 	font-size: calc(10px + 1.2vw);
+// 	background-color: #303030;
+// 	color: white;
+// 	padding: 1em 2.2em 0.8em 1.2em;
+// 	margin-bottom: 9px;
+// 	font-weight: 400;
+// 	position: relative;
+// }''
 
 const TabContentContainer = styled.div`
 	background: black;
@@ -107,23 +187,62 @@ const TabContentContainer = styled.div`
 		justify-content: center;
 		text-align: center;
 		font-weight: bold;
+		font-size: calc(12px + 3vw);
 		margin-bottom: 60px;
 	}
 
 	.box {
 		width: 100%;
 	}
-
 	.box1 {
 		text-align: left;
-		height: 70px;
-		font-size: 26px;
+		height: calc(23px + 3vw);
+		/* font-size: 26px; */
+		font-size: calc(10px + 1.2vw);
 		background-color: #303030;
 		color: white;
 		padding: 1em 2.2em 0.8em 1.2em;
 		margin-bottom: 9px;
 		font-weight: 400;
 		position: relative;
+	}
+
+	.transform {
+		transition: all 0.3s ease-out;
+		/* -webkit-transition: all 0.4s ease;
+		-moz-transition: all 0.4s ease;
+		-o-transition: all 0.4s ease;
+		-ms-transition: all 0.4s ease;
+		transition: all 0.4s ease; */
+	}
+	.subbox {
+		position: relative;
+		text-align: left;
+		/* height: calc(23px + 3vw); */
+		font-size: calc(10px + 1.2vw);
+		line-height: calc((10px + 1.2vw) * 1.3);
+		background-color: #303030;
+		color: white;
+		padding: 1em 2.2em 0.8em 1.2em;
+		margin-bottom: 9px;
+		font-weight: 400;
+		position: relative;
+		opacity: 1;
+		/* height: 0; */
+		/* display: none; */
+	}
+
+	.subbox.active {
+		transition: all 0s ease-out;
+		/* padding: 1em 2.2em 0.8em 1.2em; */
+		/* transition: max-height 0.2s ease-out; */
+		/* max-height: 0; */
+		padding: 0 2.2em 0 1.2em;
+		overflow: hidden;
+		height: 0;
+		/* display: none; */
+		/* display: inline-block; */
+		/* opacity: 0; */
 	}
 
 	.tab_right1 {

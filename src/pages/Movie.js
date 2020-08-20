@@ -8,6 +8,7 @@ import requests from "../components/moviePage/requests";
 import Footer from "../components/moviePage/Footer";
 import ContentRow from "../components/moviePage/ContentRow";
 import "semantic-ui-css/semantic.min.css";
+import styled from "styled-components";
 
 class MoviePage extends Component {
 	constructor() {
@@ -22,7 +23,7 @@ class MoviePage extends Component {
 	};
 	render() {
 		return (
-			<div>
+			<MovieDiv>
 				<Global styles={GlobalCSS} />
 				<Navbar />
 				<TitleMovie />
@@ -42,10 +43,14 @@ class MoviePage extends Component {
 					serviceClick={this.serviceClick}
 					serviceCode={this.state.serviceCode}
 				/>
-			</div>
+			</MovieDiv>
 		);
 	}
 }
+
+const MovieDiv = styled.div`
+	overflow: hidden;
+`;
 
 const GlobalCSS = css`
 	* {
@@ -77,14 +82,10 @@ const GlobalCSS = css`
 	button {
 		background-color: #d0d0d0;
 		border: 0;
-		/* border: 1px solid white; */
-		/* padding: 0.75em 2.3em; */
-		/* border-radius: 0.15rem; */
 		padding-left: calc(3.6rem / 2);
 		padding-right: calc(3.6rem / 2);
 		padding-top: 0.6rem;
 		padding-bottom: 0.6rem;
-		/* padding: 0.6rem; */
 		border-radius: 0.25vw;
 		box-shadow: none;
 		font-size: 1.1vw;

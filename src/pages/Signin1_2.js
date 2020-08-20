@@ -87,7 +87,7 @@ class Signin1_2 extends Component {
 			.then((u) => {
 				this.setCurrentUser(u);
 				this.setState({ authenticated: true });
-				toast.error("Thanks! Your account has been successfully created.");
+				toast.success("Thanks! Your account has been successfully created.");
 				console.log("kkkkkkkk");
 				console.log(u);
 			})
@@ -241,6 +241,9 @@ const Content = styled.div`
 	padding: 20px 32px 60px;
 	margin: 0 95px 130px;
 
+	@media (max-width: 750px) {
+		margin: 0 0 130px;
+	}
 	.signup-btn {
 		width: 100%;
 		height: 48px;
@@ -306,7 +309,7 @@ const Content = styled.div`
 	}
 
 	.remember2 {
-		color: #9d9d9d;
+		color: #808080;
 	}
 
 	.checkbox1 {
@@ -329,7 +332,7 @@ const Content = styled.div`
 
 const SiteFooter = styled.div`
 	padding: 30px 0 30px;
-	height: 400px;
+	/* height: 400px; */
 	/* padding: 0 auto; */
 	/* padding: 30px auto 0; */
 	width: 100%;
@@ -375,39 +378,41 @@ const SimpleContainer = styled.div`
 const Body = styled.div``;
 
 const AAA = styled.div`
+	display: flex;
 	position: relative;
+	border-bottom: solid rgb(230, 230, 230) 1px;
 	.header {
 		position: relative;
 		width: 100%;
-		height: 100px;
+		height: 70px;
 		display: block;
-		/* background-color: white; */
-		border-bottom: solid rgb(230, 230, 230) 1px;
 	}
 
 	.Signin {
-		position: absolute;
-		/* top: 50%; */
+		position: relative;
+		float: right;
+		right: 0;
+		border: none;
+		margin: 14px 3%;
+		height: 2rem;
+		width: 100px;
+		padding: 0.7rem 0.5rem;
+		font-weight: 550;
+		line-height: normal;
+		border-radius: 0.1875rem;
+		translate: transform(-50%, -50%);
+		cursor: pointer;
+
+		position: relative;
 		font-weight: 700;
 		font-size: 19px;
-		/* line-height: 90px; */
-		width: 75px;
-		height: 90px;
-		margin: 0 38px;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		right: 0;
-		top: 10px;
 		color: #333;
 	}
 `;
 
 const Logo = styled.img`
-	height: 45px;
-	width: 167px;
-	position: absolute;
-	top: 50%;
-	left: 10%;
-	transform: translate(-50%, -50%);
+	position: relative;
+	height: calc(40px);
+	top: 10px;
+	left: 5%;
 `;

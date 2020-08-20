@@ -8,10 +8,8 @@ function Row({ title, fetchUrl, isLargeRow }) {
 	const [movies, setMovies] = useState([]);
 
 	useEffect(() => {
-		// if [], run one when the row loads, and dont run again
 		async function fetchData() {
 			const request = await axios.get(fetchUrl);
-			// console.table(request);
 			console.table(request.data.results);
 			setMovies(request.data.results);
 			return request;
@@ -23,7 +21,6 @@ function Row({ title, fetchUrl, isLargeRow }) {
 		<div className="row">
 			<h2 className="title">{title}</h2>
 			<div className="row_posters">
-				{/* {movies.map()} */}
 				{movies.map((movie) => (
 					<img
 						key={movie.id}

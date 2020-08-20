@@ -80,7 +80,7 @@ class Header extends Component {
 			.signInWithEmailAndPassword(email, password)
 			.then((user) => {
 				this.setCurrentUser(user);
-				toast.error("Login Succeded.");
+				toast.success("Login Succeded.", { autoClose: 2000 });
 				this.setState({ redirect: true });
 			})
 			.catch((error) => {
@@ -206,9 +206,27 @@ class Header extends Component {
 					<div className="container">
 						<p className="footer-top">Question? Call 00-308-321-0161</p>
 						<div className="footer_container">
-							<a className="footer-item">Gift Card Terms</a>
-							<a className="footer-item">Terms of Use</a>
-							<a className="footer-item">Privacy Statement</a>
+							<a
+								className="footer-item"
+								href="https://help.netflix.com/legal/giftterms"
+								target="_blank"
+							>
+								Gift Card Terms
+							</a>
+							<a
+								className="footer-item"
+								href="https://help.netflix.com/legal/termsofuse"
+								target="_blank"
+							>
+								Terms of Use
+							</a>
+							<a
+								className="footer-item"
+								href="https://help.netflix.com/legal/privacy"
+								target="_blank"
+							>
+								Privacy Statement
+							</a>
 						</div>
 
 						<div className="description2">
@@ -236,21 +254,26 @@ const Footer = styled.div`
 	position: relative;
 	width: 100%;
 	height: 26.7%;
-	// margin-top:200px 174px;
+	overflow: hidden;
+	/* // margin-top:200px 174px; */
 	background: rgba(0, 0, 0, 0.7);
+	background-color: black;
 	.container {
+		/* margin-bottom: 2rem; */
+		background-color: black;
 		max-width: 1000px;
 		p {
 			margin: 1rem 0 1.5em;
 			line-height: 1.35em;
 			font-size: 1.5em;
 		}
-		padding: 25px 0;
-		margin: 0 auto;
+		padding: 20px 4%;
+		/* margin: 20px auto; */
 		color: #757575;
 	}
 
 	.footer_container {
+		background-color: black;
 		display: flex;
 		justify-content: space-between;
 		a {
@@ -280,8 +303,6 @@ const LoginContent = styled.div`
 	}
 	position: relative;
 	z-index: 1000;
-
-	min-height: 660px;
 	@media only screen and (min-width: 740px) {
 		min-height: 625px;
 		padding: 60px 68px 40px;
@@ -291,7 +312,6 @@ const LoginContent = styled.div`
 		width: 100%;
 	}
 
-	/* color: #8c8c8c; */
 	margin: 0 auto;
 	padding: 0 5%;
 
@@ -341,7 +361,6 @@ const LoginContent = styled.div`
 	}
 
 	.placeholder {
-		/* text-transform: uppercase; */
 		font-size: 14px;
 		font-weight: 500;
 		position: absolute;
@@ -361,8 +380,6 @@ const LoginContent = styled.div`
 		top: 15px;
 		right: 20px;
 		pointer-events: fill;
-
-		/* right: 0; */
 	}
 
 	.remember {
@@ -391,7 +408,6 @@ const LoginContent = styled.div`
 		display: flex;
 	}
 	.icon-color {
-		/* color: #3b5998; */
 		size: 20px;
 	}
 
@@ -406,7 +422,6 @@ const LoginContent = styled.div`
 	.newtonetflix {
 		position: relative;
 		display: flex;
-		/* justify-content: space-between; */
 		margin-bottom: 20px;
 	}
 	h2 {
@@ -419,7 +434,6 @@ const LoginContent = styled.div`
 	.signupnow {
 		position: relative;
 		line-height: 16px;
-		/* top: 6px; */
 		right: 0;
 		font-size: 16px;
 	}
@@ -452,21 +466,13 @@ const LoginContent = styled.div`
 	.text {
 		padding: 16px 20px 0;
 	}
-
-	.placeLabel {
-		left: 20px;
-		font-size: 16px;
-		// position: absolute;
-		// top: 50%;
-		/* color: white; */
-	}
 `;
 
 const LoginBody = styled.div`
 	z-index: 1;
 	@media only screen and (min-width: 740px) {
-		margin: 0 auto -236px;
-		min-height: 100vh;
+		margin: 0 auto 236px;
+		/* min-height: 100vh; */
 		/* background-color: transparent; */
 		max-width: 450px;
 	}
@@ -540,16 +546,17 @@ const HeroCard = styled.div`
 `;
 
 const Logo = styled.img`
-	height: 45px;
-	width: 167px;
-	position: absolute;
-	top: 50%;
-	left: 10%;
-	transform: translate(-50%, -50%);
+	position: relative;
+	height: calc(40px);
+	top: 10px;
+	left: 5%;
 `;
 
 // Header Container
 const HeaderComponent = styled.div`
+	width: 100%;
+	background-color: black;
+	/* overflow: hidden; */
 	.signIn-btn {
 		right: 0;
 		margin: 1.125rem 3% 0;
@@ -574,7 +581,7 @@ const HeaderComponent = styled.div`
 		z-index: 1;
 	}
 
-	// Header Content
+	/* // Header Content */
 	.header-content {
 		max-width: 550px;
 		position: relative;

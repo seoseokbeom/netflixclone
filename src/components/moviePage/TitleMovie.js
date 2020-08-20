@@ -30,10 +30,6 @@ const TitleMovie = ({ children }) => (
 				<BsExclamationCircle className="btnIcons" />
 				More Info
 			</button>
-			{/* C:\Users\kakun\Desktop\github\netflixclone\netflix\src\images\playMovie\sliders1.png */}
-			{/* <img className="sliders1" src={sliders1} alt="sliders1" /> */}
-			{/* <Button icon="play">Play</Button>
-			<Button icon="info-circle">More Info</Button> */}
 		</div>
 		{children}
 	</div>
@@ -41,33 +37,26 @@ const TitleMovie = ({ children }) => (
 
 const TitleMovieCSS = css`
   position: relative;
-  z-index:-999;  
+  z-index:2;  
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0.3), transparent),
-		url('${ItsOk}');
-    min-height:100%;
-    min-width: 100%;
-    background-position: center center;
-    background-size: cover;
-    ${"" /* background-size: contain; */}
-    height: auto;
-    top: 0;
-    left: 0;
-  /* background-image:  url('${ItsOk}'); */
-  /* background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0.52), rgba(117, 19, 93, 0.73)), url('images/background.jpg'); */
-  /* background-image: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(255,255,255,1) 100% ) url('${ItsOk}'); */
-  ${"" /* background-repeat: no-repeat center fixed;   */}
-  ${"" /* object-fit: contain;
-  width: 100%; */}
-  ${"" /* background-size: 100%; */}
-  ${"" /* background-size: cover; */}
-  ${"" /* height: 103vh; */}
+  url('${ItsOk}');
+  width:100vw;
+  overflow:hidden;
+  background-position: center center;
+  background-size: cover;
+  height: auto;
   top: 0;
+  left: 0;
+  top: 0;
+  @media only screen and (max-width: 500px) {
+      display:none;
+      height:200px;
+  }
 
  
   .btnIcons {
     margin-right:0.7rem;
     padding-top:0.2rem;
-    /* font-weight:200; */
   }
 
   .button2 {
@@ -85,24 +74,20 @@ const TitleMovieCSS = css`
     font-size: 1.6vw;
     color: #fff;
     transition: color 1s cubic-bezier(.165,.84,.44,1);
-    /* text-shadow: 2px 2px 4px rgba(0,0,0,.45); */
     margin: 1vw 0;
   }
   
   
 
   .synopsis {
-
-    width: 40%;
-    
+    width: calc((45vh + 45vw)/2);
+    ${"" /* width: 40%; */}
     padding-top: 200px;
     padding-left: 60px;
     padding-bottom:300px;
-    /* max-width: 500px; */
     color: white;
     padding-left: 60px;
     .info1 {
-
       color: #fff;
     font-weight: 400;
     line-height: normal;
@@ -111,9 +96,6 @@ const TitleMovieCSS = css`
     text-shadow: 2px 2px 4px rgba(0,0,0,.45);
     margin-top: .1vw;
     }
-
-    /* img {
-    } */
 
     .logo1 {
       width: 80%;
@@ -126,9 +108,5 @@ const TitleMovieCSS = css`
     }
   }
 
-  .ContentRow {
-    ${"" /* position: absolute; */}
-    ${"" /* bottom: 20px; */}
-  }
 `;
 export default TitleMovie;

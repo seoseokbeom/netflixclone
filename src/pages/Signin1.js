@@ -29,7 +29,7 @@ export class Signin1 extends Component {
 						</a>
 					</Link>
 				</AAA>
-				<SimpleContainer></SimpleContainer>
+				{/* <SimpleContainer></SimpleContainer> */}
 				<Content>
 					<div className="contentContainer">
 						<div className="logoContainer">
@@ -130,7 +130,10 @@ const Content = styled.div`
 	height: 487px;
 	background-color: white;
 	padding: 20px 32px 60px;
-	margin: 0 95px 15px;
+	margin: 0 95px 130px;
+	@media (max-width: 750px) {
+		margin: 0 0 130px;
+	}
 
 	.logoContainer {
 		color: black;
@@ -162,7 +165,7 @@ const Content = styled.div`
 
 const SiteFooter = styled.div`
 	padding: 30px 0 30px;
-	height: 400px;
+	/* height: 400px; */
 	width: 100%;
 	font-size: 1em;
 	background-color: #f3f3f3;
@@ -195,46 +198,54 @@ const SiteFooter = styled.div`
 	}
 `;
 
-const SimpleContainer = styled.div`
-	width: 100%;
-	overflow: hidden;
-	-webkit-tap-highlight-color: transparent;
-	background: white;
-`;
+// const SimpleContainer = styled.div`
+// 	width: 100%;
+// 	overflow: hidden;
+// 	-webkit-tap-highlight-color: transparent;
+// 	background: white;
+// `;
 
 const Body = styled.div``;
 
 const AAA = styled.div`
+	display: flex;
 	position: relative;
+	border-bottom: solid rgb(230, 230, 230) 1px;
 	.header {
 		position: relative;
 		width: 100%;
-		height: 100px;
+		height: 70px;
 		display: block;
-		border-bottom: solid rgb(230, 230, 230) 1px;
 	}
 
 	.Signin {
-		position: absolute;
+		position: relative;
+		float: right;
+		right: 0;
+		border: none;
+		margin: 14px 3%;
+		height: 2rem;
+		width: 100px;
+		padding: 0.7rem 0.5rem;
+		font-weight: 550;
+		line-height: normal;
+		border-radius: 0.1875rem;
+		translate: transform(-50%, -50%);
+		cursor: pointer;
+
+		position: relative;
 		font-weight: 700;
 		font-size: 19px;
-		width: 75px;
-		height: 90px;
-		margin: 0 38px;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		right: 0;
-		top: 10px;
 		color: #333;
 	}
 `;
 
+// .signIn-btn {
+// }
+
 const Logo = styled.img`
-	height: 45px;
-	width: 167px;
-	position: absolute;
-	top: 50%;
-	left: 10%;
-	transform: translate(-50%, -50%);
+	position: relative;
+	height: calc(40px);
+	top: 10px;
+	left: 5%;
 `;

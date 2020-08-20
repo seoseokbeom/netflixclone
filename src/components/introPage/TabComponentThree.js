@@ -5,7 +5,6 @@ import netflixImg from "../../images/svg/netflix.jpg";
 import netflix4 from "../../images/svg/netflix4.jpg";
 import devicePile from "../../images/svg/device-pile.png";
 import NetflixPrices from "../../images/svg/netflixprices1.jpg";
-import "../../css/TabThree.css";
 import {
 	BrowserRouter as Router,
 	Switch,
@@ -77,7 +76,7 @@ const Button = styled.div`
 	border: none;
 	display: flex;
 	background: #f40612;
-	font-size: 1.625rem;
+	font-size: calc(10px + 1vw);
 	min-height: 60px;
 `;
 const TabContentContainer = styled.div`
@@ -98,7 +97,7 @@ const TabContentContainer = styled.div`
 	}
 	.price-container {
 		h1 {
-			font-size: 31px;
+			font-size: calc(12px + 1.5vw);
 			margin-bottom: 30px;
 		}
 		width: 80%;

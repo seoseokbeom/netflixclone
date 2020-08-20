@@ -92,7 +92,7 @@ a {
 .dropdown {
 	position: absolute;
 	top: 60px;
-	height: 300px;
+	height: 130px;
 	width: 185px;
 	/* height: 1000px; */
 	transform: translateX(-35%);

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import logo from "../../../src/images/svg/logo.svg";
+import NetflixN from "../../../src/images/svg/netflixN.png";
 // import {  } from "react-router-dom";
 import styled from "styled-components";
 import "../../css/App.css";
@@ -29,18 +30,20 @@ class Header extends Component {
 
 	render() {
 		return (
-			<div>
+			<div className="intro-page">
 				<HeaderComponent className="header-container_intro">
 					<div className="overlay"></div>
 					<div className="header-top">
 						<Logo src={logo} />
-						<Link className="signIn-btn" to="/signin">
-							Sign In
+						<Link to="/signin">
+							<button type="button" className="signIn-btn">
+								Sign In
+							</button>
+							{/* Sign In */}
 						</Link>
 					</div>
 					{/* Header Content */}
 					<StoryCard>
-						{/* <div className="header-content"> */}
 						<HeroCard>
 							<Title>Unlimited movies, TV shows, and more.</Title>
 							<h2>Watch anywhere. Cancel at any time.</h2>
@@ -63,8 +66,8 @@ class Header extends Component {
 						{/* </div> */}
 					</StoryCard>
 				</HeaderComponent>
-				<Tab className="tabcomponent">
-					<TabComponent />
+				<Tab>
+					<TabComponent className="tabcomponent" />
 					<div className="email-require">
 						<StoryCard>
 							<StoryCardMssage>
@@ -104,6 +107,17 @@ const StoryCardMssage = styled.p`
 `;
 
 const Tab = styled.div`
+	.email-require {
+		@media only screen and (max-width: 1100px) {
+			display: none;
+		}
+	}
+	.tabcomponent {
+		background-color: black;
+		@media only screen and (max-width: 1100px) {
+			display: none;
+		}
+	}
 	width: 100%;
 	height: 15vh;
 	background-color: black;
@@ -162,15 +176,17 @@ const Button = styled.button`
 	border-radius: 2px;
 	align-items: center;
 	justify-content: center;
-	padding: 0 1em;
-	width: 40%;
+	/* padding: 0 0; */
+	width: 30vw;
+	max-width: 380px;
 	position: relative;
 	text-align: center;
 	color: #fff;
 	border: none;
 	display: flex;
 	background: #f40612;
-	font-size: 1.625rem;
+	font-size: calc(10px + 1vw);
+	/* font-size: 1.625rem; */
 	min-height: 60px;
 `;
 
@@ -189,33 +205,44 @@ const StoryCard = styled.div`
 const HeroCard = styled.div`
 	max-width: 640px;
 	margin: 0 auto;
+
 	h2 {
-		font-weight: 80;
+		font-size: calc(12px + 1.5vw);
+		font-weight: 1;
 		margin: 1rem auto;
 	}
 `;
 
 const Logo = styled.img`
-	width: 134px;
-	height: 44px;
-	position: absolute;
-	top: 25%;
-	left: 10%;
-	transform: translate(-50%, -50%);
+	/* width: 134px;
+	height: 44px; */
+	position: relative;
+	height: calc(40px);
+	top: 10px;
+	/* top: calc(50%); */
+	left: 5%;
+
+	/* transform: translate(-50%, -50%); */
 `;
 
 // Header Container
 const HeaderComponent = styled.div`
 	.signIn-btn {
+		/* position: absolute; */
+		/* display: flex; */
+		position: relative;
+		float: right;
 		right: 0;
-		margin: 1.125rem 3% 0;
+		border: none;
+		/* margin: 1.125rem 3% 0; */
+		margin: 20px 3%;
+		height: 2rem;
 		padding: 0.4275rem 1.0625rem;
-		font-weight: 400;
+		font-weight: 550;
 		line-height: normal;
 		border-radius: 0.1875rem;
-		font-size: 1rem;
+		/* font-size: 1rem; */
 		background: var(--main-red);
-		position: absolute;
 		translate: transform(-50%, -50%);
 		cursor: pointer;
 		color: white;
@@ -227,7 +254,7 @@ const HeaderComponent = styled.div`
 
 	.header-top {
 		position: relative;
-		height: 10rem;
+		height: 7vw;
 		z-index: 1;
 	}
 
@@ -249,10 +276,13 @@ const HeaderComponent = styled.div`
 const Title = styled.h1`
 	max-width: 640px;
 	margin: 0 auto;
-	font-size: 3.125rem;
-	@media only screen and (max-width: 1449px) and (min-width: 950px) {
+	font-size: calc(12px + 3vw);
+	line-height: 1em;
+	/* font-weight: 2vw; */
+	/* font-size: 3.125rem; */
+	/* @media only screen and (max-width: 1449px) and (min-width: 950px) {
 		font-size: 3.125rem;
-	}
+	} */
 `;
 
 // Subtitle

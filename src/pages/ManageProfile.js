@@ -87,6 +87,8 @@ export default ManageProfile;
 
 const Manage = styled.div`
 	width: 100%;
+	height: 100%;
+	overflow: hidden;
 `;
 
 const Logo = styled.img`
@@ -192,7 +194,7 @@ const StoryCard = styled.div`
 	padding: 35px 0;
 	max-width: 950px;
 	max-width: 80%;
-	margin: 180px auto;
+	margin: 180px auto 0;
 	height: 400px;
 	text-align: center;
 	z-index: 1;

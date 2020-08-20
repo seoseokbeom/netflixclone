@@ -12,16 +12,31 @@
 
 .title {
 	margin-top: 0px;
+	color: #e5e5e5;
+	font-size: 1.4vw;
+	font-weight: 700;
 }
-
 .row_posters {
 	/* position: fixed; */
 	overflow-x: scroll;
 	overflow-y: hidden;
 	z-index: 10;
 	display: flex;
-	padding: 20px;
-	padding-bottom: 40px;
+	padding: 2vw;
+	padding-bottom: 2.4vw;
+	/* padding: 20px;
+	padding-bottom: 40px; */
+}
+
+@media only screen and (max-width: 800px) {
+	.title {
+		font-size: 14px;
+		margin: 0;
+	}
+
+	.row_posters {
+		padding: 0;
+	}
 }
 
 .row::-webkit-scrollbar {
@@ -31,7 +46,8 @@
 .row_poster {
 	object-fit: contain;
 	width: 100%;
-	max-height: 188px;
+	max-height: calc(60px + 5vw);
+	/* max-height: 188px; */
 	margin-right: 3px;
 	transition: transform 400ms;
 }
@@ -41,9 +57,10 @@
 }
 
 .row_posterLarge {
-	max-height: 350px;
-	margin-right: 100px;
-	margin-left: 50px;
+	/* max-height: 350px; */
+	max-height: calc(120px + 14vw);
+	/* margin-right: calc(120px + 14vw) / 4); */
+	/* margin-left: calc((120px + 14vw) / 4); */
 }
 
 .row_posterLarge:hover {

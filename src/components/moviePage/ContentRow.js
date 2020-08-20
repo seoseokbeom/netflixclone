@@ -21,11 +21,24 @@ const ContentRow = () => {
 				}
 				z-index: 2;
 				padding: 30px;
-				margin-top: -200px;
+				margin-top: -100px;
 				overflow: auto;
+				@media only screen and (max-width: 500px) {
+					/* display: none; */
+					padding-top: 200px;
+				}
 			`}
 		>
-			<h2>New Episodes</h2>
+			<h2
+				css={css`
+					font-size: 1.4vw;
+					@media only screen and (max-width: 800px) {
+						font-size: 14px;
+					}
+				`}
+			>
+				New Episodes
+			</h2>
 			<div
 				css={css`
 					position: relative;
@@ -42,6 +55,12 @@ const ContentRow = () => {
 								transform: scale(1.4);
 							}
 							margin-right: 3px;
+							object-fit: contain;
+							width: 100%;
+							max-height: calc(60px + 5vw);
+							/* max-height: 188px; */
+							margin-right: 3px;
+							transition: transform 400ms;
 						`}
 						src={image}
 						key={image}
